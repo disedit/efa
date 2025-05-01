@@ -5,6 +5,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: false },
 
+  runtimeConfig: {
+    public: {
+      wpApiEndpoint: 'https://content.efaparty.eu/wp-json',
+      baseUrl: 'https://efaparty.eu'
+    }
+  },
+
   css: ['~/assets/css/main.css'],
 
   modules: [
