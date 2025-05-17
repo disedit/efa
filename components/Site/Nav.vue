@@ -48,7 +48,7 @@ function toggleMenu () {
     ]"
   >
     <NuxtLink to="/" class="logo text-primary" aria-label="European Free Alliance">
-      <SiteLogo class="h-[2rem]" />
+      <LogoEFA class="h-[2rem]" />
     </NuxtLink>
     <SiteNavMenu :items="settings.menu" class="hidden xl:flex" />
     <div class="gap-site items-center hidden xl:flex">

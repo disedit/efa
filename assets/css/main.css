@@ -19,8 +19,9 @@
   --text-5xl: clamp(4.17rem, 6.52vi + 2.54rem, 10.28rem);
   --spacing-site: 1rem;
   --spacing-navbar: 3.9325rem;
-  --spacing-viewport: calc(100svh - var(--spacing-navbar));
-  --spacing-fill: 100svh;
+  --spacing-safe-viewport: calc(100svh - var(--spacing-navbar));
+  --spacing-safest-viewport: calc(100svh - var(--spacing-navbar) - var(--spacing-site));
+  --spacing-viewport: 100svh;
   --color-lime-*: initial;
   --color-red-*: initial;
   --color-yellow-*: initial;
@@ -66,6 +67,17 @@
   ::selection {
     color: var(--color-selection-foreground, var(--color-white));
     background-color: var(--color-selection-background, var(--color-primary));
+  }
+
+  .prose {
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        font-weight: 700;
+        letter-spacing: -0.0225em;
+      }
+    }
   }
 }
 

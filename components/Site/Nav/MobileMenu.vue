@@ -114,7 +114,7 @@ function onLeaveCancelled() {
         </div>
       </div>
       <div class="decoration-wrapper">
-        <SiteLogoForAll class="decoration" />
+        <LogoForAll class="decoration" />
       </div>
     </nav>
   </Transition>

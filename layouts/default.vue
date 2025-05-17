@@ -3,7 +3,6 @@ useHead({
   htmlAttrs: { lang: 'en', class: 'bg-white' },
   meta: [
     { name: 'theme-color', content: '#773E90' },
-    { name: 'msapplication-TileColor', content: '#773E90' },
     { name: 'apple-mobile-web-app-title', content: 'EFA' }
   ],
   link: [
@@ -21,6 +20,7 @@ useHead({
     <NuxtLoadingIndicator :color="false" />
     <SiteNav />
     <slot />
+    <SiteFooter />
   </div>
 </template>
 

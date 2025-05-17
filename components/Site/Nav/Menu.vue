@@ -6,7 +6,7 @@ defineProps({
   }
 })
 
-const { link } = useUtils()
+const { link, isActive } = useUtils()
 
 // Handle submeus
 const hovering = ref(null)
@@ -49,7 +49,7 @@ function unhover() {
         :to="link(item)"
         :aria-expanded="hovering === i ? 'true' : 'false'"
         @click.prevent="toggleHover(i)"
-        class="menu-link has-submenu"
+        :class="['menu-link has-submenu', { active: isActive(item) }]"
       >
         {{ item.label }}
       </NuxtLink>
@@ -147,7 +147,8 @@ function unhover() {
     }
 
     &:hover,
-    &.router-link-active {
+    &.router-link-active,
+    &.active {
       font-weight: 700;
       letter-spacing: -.0225em;
     }
