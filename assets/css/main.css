@@ -1,1 +1,76 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: Aspekta, sans-serif;
+  --color-purple: #773E90;
+  --color-orange: #ED8062;
+  --color-white: #FAF5F2;
+  --color-cream: #EAD6CB;
+  --color-primary: var(--color-purple);
+  --color-secondary: var(--color-orange);
+  --text-sm: clamp(0.7rem, 0.35vi + 0.61rem, 1.03rem);
+  --text-base: clamp(0.88rem, 0.53vi + 0.74rem, 1.38rem);
+  --text-md: clamp(1.09rem, 0.79vi + 0.9rem, 1.83rem);
+  --text-lg: clamp(1.37rem, 1.15vi + 1.08rem, 2.44rem);
+  --text-xl: clamp(1.71rem, 1.65vi + 1.3rem, 3.26rem);
+  --text-2xl: clamp(2.14rem, 2.35vi + 1.55rem, 4.34rem);
+  --text-3xl: clamp(2.67rem, 3.32vi + 1.84rem, 5.79rem);
+  --text-4xl: clamp(3.34rem, 4.67vi + 2.17rem, 7.71rem);
+  --text-5xl: clamp(4.17rem, 6.52vi + 2.54rem, 10.28rem);
+  --spacing-site: 1rem;
+  --spacing-navbar: 3.9325rem;
+  --spacing-viewport: calc(100svh - var(--spacing-navbar));
+  --spacing-fill: 100svh;
+  --color-lime-*: initial;
+  --color-red-*: initial;
+  --color-yellow-*: initial;
+  --color-amber-*: initial;
+  --color-green-*: initial;
+  --color-emerald-*: initial;
+  --color-teal-*: initial;
+  --color-cyan-*: initial;
+  --color-sky-*: initial;
+  --color-blue-*: initial;
+  --color-indigo-*: initial;
+  --color-violet-*: initial;
+  --color-fuchsia-*: initial;
+  --color-pink-*: initial;
+  --color-rose-*: initial;
+  --color-slate-*: initial;
+  --color-stone-*: initial;
+}
+
+@font-face {
+  font-family: 'Aspekta';
+  src: url('../fonts/AspektaVF.woff2') format('woff2-variations');
+  font-weight: 100 1000;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--spacing-navbar);
+  }
+
+  a {
+    color: var(--color-primary);
+  }
+
+  *:focus-visible {
+    outline: 3px solid var(--color-focus, var(--color-primary));
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    color: var(--color-selection-foreground, var(--color-white));
+    background-color: var(--color-selection-background, var(--color-primary));
+  }
+}
+
+@media (max-width: 46rem) {
+  :root {
+    --spacing-site: .75rem;
+  }
+}

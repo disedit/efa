@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       wpApiEndpoint: 'https://content.efaparty.eu/wp-json',
+      contentUrl: 'https://content.efaparty.eu',
       baseUrl: 'https://efaparty.eu'
     }
   },
@@ -17,7 +18,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/icon',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@vueuse/nuxt'
   ],
 
   vite: {

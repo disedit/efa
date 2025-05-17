@@ -13,6 +13,7 @@ export default defineNuxtPlugin(() => {
   wp.campaigns = wp.registerRoute('wp/v2', 'campaign')
   wp.documents = wp.registerRoute('wp/v2', 'document')
   wp.jobs = wp.registerRoute('wp/v2', 'job-posting')
+  wp.settings = wp.registerRoute('settings', 'all')
 
   return {
     provide: {
