@@ -1,0 +1,20 @@
+<script setup>
+defineProps({
+  size: { 
+    type: String,
+    default: 'base',
+  },
+})
+</script>
+
+<template>
+  <input
+    v-bind="$attrs"
+    :class="[
+      'bg-white border-3 w-full py-[.25em] px-[.5em] focus:outline-none',
+      {
+        'text-base': size === 'base',
+      }
+    ]"
+  />
+</template>

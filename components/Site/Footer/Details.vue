@@ -14,7 +14,7 @@ defineProps({
     <div>
       <div class="flex items-center gap-2">
         <LogoEFAMark class="h-[1.5rem]" />
-        <span class="text-[2rem] font-bold">EFA</span>
+        <span class="text-[2rem] font-bold -translate-y-[1px]">EFA</span>
       </div>
 
       <div v-html="address" class="prose text-base leading-tight" />

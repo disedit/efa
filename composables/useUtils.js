@@ -11,6 +11,11 @@ export const useUtils = () => {
       return item.url || '#'
     },
 
+    internalLink: (url) => {
+      if (!url) return '#'
+      return url.replaceAll(config.public.contentUrl, '')
+    },
+
     isActive: (item) => {
       if (!item.page) {
         return false

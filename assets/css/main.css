@@ -69,6 +69,11 @@
     background-color: var(--color-selection-background, var(--color-primary));
   }
 
+  .selection-orange{
+    --color-selection-foreground: var(--color-white);
+    --color-selection-background: var(--color-orange);
+  }
+
   .prose {
     a {
       text-decoration: underline;
@@ -79,10 +84,28 @@
       }
     }
   }
-}
 
-@media (max-width: 46rem) {
-  :root {
-    --spacing-site: .75rem;
+  .color-purple {
+    --bg-color: var(--color-purple);
+    --text-color: var(--color-white);
+    --text-color-secondary: var(--color-orange);
+  }
+
+  .color-orange {
+    --bg-color: var(--color-orange);
+    --text-color: var(--color-white);
+    --text-color-secondary: var(--color-purple);
+  }
+
+  .color-cream {
+    --bg-color: var(--color-cream);
+    --text-color: var(--color-purple);
+    --text-color-secondary: var(--color-purple);
+  }
+
+  .color-white {
+    --bg-color: var(--color-white);
+    --text-color: var(--color-purple);
+    --text-color-secondary: var(--color-purple);
   }
 }

@@ -12,15 +12,23 @@
     </h3>
     <p class="text-base">Join our newsletter</p>
 
-    <div class="flex flex-col gap-site my-4 md:my-6">
-      <label for="newsletter_email" class="sr-only">Your e-mail</label>
-      <FormInput
-        id="newsletter_email"
-        type="email"
-        name="EMAIL"
-        placeholder="Email"
-        required
-      />
+    <div class="flex flex-col gap-site mt-4 mt:my-6">
+      <div class="flex">
+        <label for="newsletter_email" class="sr-only">Your e-mail</label>
+        <FormInput
+          id="newsletter_email"
+          type="email"
+          name="EMAIL"
+          placeholder="Email"
+          required
+        />
+        <FormButton
+          type="submit"
+          name="subscribe"
+          id="mc-embedded-subscribe"
+          value="Subscribe"
+        />
+      </div>
 
       <label class="flex text-sm gap-2">
         <FormCheckbox
@@ -39,14 +47,6 @@
       <div aria-hidden="true" style="position: absolute; left: -5000px;">
           <input type="text" name="b_ac6d425391adfe5b91b4c11c5_02445d05b4" tabindex="-1" value="">
       </div>
-    </div>
-    <div class="mt-4 md:mt-8">
-      <FormButton
-        type="submit"
-        name="subscribe"
-        id="mc-embedded-subscribe"
-        value="Subscribe"
-      />
     </div>
   </form>
 </template>

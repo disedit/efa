@@ -27,4 +27,11 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+
+  image: process.env.NUXT_PUBLIC_NODE_ENV === 'production' ? {
+    provider: 'netlify',
+    domains: ['pmf.disedit.com']
+  } : {
+    provider: 'ipx'
+  },
 })
