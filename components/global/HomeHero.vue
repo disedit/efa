@@ -5,6 +5,8 @@ const backgroundStyles = computed(() => {
   const imgUrl = img(props.block.background?.url, { width: 1200 })
   return { backgroundImage: `url('${imgUrl}')` }
 })
+
+const { $gsap } = useNuxtApp()
 </script>
 
 <template>
@@ -22,8 +24,8 @@ const backgroundStyles = computed(() => {
     <h1 class="font-extrabold text-4xl selection-orange md:max-w-[50%]">
       <span
         :class="[
-          'px-[.35em] py-[.15em] box-decoration-clone leading-[1.1]',
           {
+            'px-[.25em] box-decoration-clone leading-[1.6]': block.text_pill !== 'transparent',
             'text-purple': block.text_pill === 'transparent',
             'text-purple bg-white': block.text_pill === 'white',
             'text-white bg-purple': block.text_pill === 'purple',

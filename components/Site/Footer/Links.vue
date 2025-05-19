@@ -13,10 +13,10 @@ const { link } = useUtils()
   <ul class="flex gap-2">
     <li v-for="(item, i) in links" :key="i">
       <NuxtLink
-        :to="link(item)"
+        :to="link(item.link)"
         class="text-sm underline hover:font-bold hover:-tracking-[0.0225em]"
       >
-        {{ item.label }}
+        {{ item.link.title }}
       </NuxtLink>
     </li>
   </ul>

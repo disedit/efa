@@ -1,22 +1,6 @@
 <script setup>
-import { breakpointsTailwind } from '@vueuse/core'
 const settings = await useSettings()
 const { link } = useUtils()
-
-/* Hide/Show nav bar on scorll */
-const breakpoints = useBreakpoints(breakpointsTailwind)
-const isMobile = breakpoints.smaller('xl')
-const { y } = useWindowScroll()
-const showNavbar = ref(true)
-const lastScrollPosition = ref(0)
-
-watch(y, (currentScrollPosition) => {
-  if (currentScrollPosition < 0 || Math.abs(currentScrollPosition - lastScrollPosition.value) < 60) {
-    return
-  }
-  showNavbar.value = currentScrollPosition < lastScrollPosition.value
-  lastScrollPosition.value = currentScrollPosition
-})
 
 /* Mobile menu */
 const { setMenuOpen, unsetMenuOpen } = useColorMode()
@@ -42,10 +26,7 @@ function toggleMenu () {
 
 <template>
   <nav
-    :class="[
-      'efa-nav fixed flex bg-white top-0 left-0 right-0 px-site py-site xl:py-2 justify-between items-center gap-site transition duration-[.5s] ease-out z-[5000]',
-      { '-translate-y-[100%]': !showNavbar && !isMobile }
-    ]"
+    class="nav efa-nav fixed flex bg-white top-0 left-0 right-0 px-site py-site xl:py-2 justify-between items-center gap-site transition z-[5000]"
   >
     <NuxtLink to="/" class="logo text-primary" aria-label="European Free Alliance">
       <LogoEFA class="h-[2rem]" />
@@ -54,11 +35,11 @@ function toggleMenu () {
     <div class="gap-site items-center hidden xl:flex">
       <SiteNavSocials :items="settings.socials" />
       <UtilsButton
-        v-if="settings.menu_cta.label"
-        :to="link(settings.menu_cta)"
+        v-if="settings.menu_cta"
+        :to="link(settings.menu_cta.link)"
         class="text-base"
       >
-        {{ settings.menu_cta.label }}
+        {{ settings.menu_cta.link?.title }}
       </UtilsButton>
     </div>
     <button
@@ -81,3 +62,10 @@ function toggleMenu () {
   />
   <div class="h-navbar" />
 </template>
+
+<style lang="scss" scoped>
+.dark .nav {
+  --color-white: var(--color-black);
+  --color-primary: #FAF5F2;
+}
+</style>

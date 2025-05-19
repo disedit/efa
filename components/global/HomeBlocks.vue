@@ -1,7 +1,7 @@
 <script setup>
 defineProps({ block: Object })
 
-const { internalLink } = useUtils()
+const { link } = useUtils()
 </script>
 
 <template>
@@ -9,7 +9,7 @@ const { internalLink } = useUtils()
     <template v-for="(homeBlock, i) in block.blocks" :key="i">
       <NuxtLink
         v-if="!homeBlock.is_newsletter"
-        :to="internalLink(homeBlock.link)"
+        :to="link(homeBlock.link)"
         :class="[
           'bg-(--bg-color) text-(--text-color-secondary) p-site md:p-7 leading-[1]',
           'text-2xl font-extrabold min-h-[4em] md:min-h-[2em] hover:text-(--text-color)',
@@ -24,7 +24,3 @@ const { internalLink } = useUtils()
     </template>
   </section>
 </template>
-
-<style>
-
-</style>

@@ -98,14 +98,14 @@ function onLeaveCancelled() {
       <NuxtLink
         v-for="(item, i) in menu"
         :key="item.to"
-        :to="link(item)"
-        :data-hover="item.label"
+        :to="link(item.link)"
+        :data-hover="item.link?.title"
         @click="emit('hide', i)">
-        <div class="animate">{{ item.label }}</div>
+        <div class="animate">{{ item.link?.title }}</div>
       </NuxtLink>
-      <a :href="link(cta)" target="_blank">
+      <a v-if="cta" :href="link(cta.link)" target="_blank">
         <div class="animate">
-          {{ cta.label }}
+          {{ cta.link.title }}
         </div>
       </a>
       <div class="menu-socials">
@@ -129,11 +129,13 @@ function onLeaveCancelled() {
   z-index: 2000;
   padding: var(--spacing-site);
   padding-top: calc(var(--spacing-navbar) + var(--spacing-site));
+  display: flex;
   flex-direction: column;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 
   a {
+    display: block;
     position: relative;
     color: var(--color-white);
     text-decoration: none;

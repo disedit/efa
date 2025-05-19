@@ -3,25 +3,16 @@ export const useUtils = () => {
   const route = useRoute()
 
   return {
-    link: (item) => {
-      if (item.page) {
-        return item.page.replaceAll(config.public.contentUrl, '')
-      }
-
-      return item.url || '#'
+    link: (link) => {
+      return link && link.url && link.url.replaceAll(config.public.contentUrl, '')
     },
 
-    internalLink: (url) => {
-      if (!url) return '#'
-      return url.replaceAll(config.public.contentUrl, '')
-    },
-
-    isActive: (item) => {
-      if (!item.page) {
+    isActive: (link) => {
+      if (!link || !link.url) {
         return false
       }
 
-      const path = item.page.replaceAll(config.public.contentUrl, '')
+      const path = link.url.replaceAll(config.public.contentUrl, '')
       const pathSlugs = path.split('/').filter(Boolean)
       const routeSlugs = route.params.slug
 
