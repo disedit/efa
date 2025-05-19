@@ -69,7 +69,7 @@
     background-color: var(--color-selection-background, var(--color-primary));
   }
 
-  .selection-orange{
+  .selection-orange {
     --color-selection-foreground: var(--color-white);
     --color-selection-background: var(--color-orange);
   }

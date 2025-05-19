@@ -16,7 +16,7 @@ const { link } = useUtils()
           `color-${homeBlock.color}`
         ]"
       >
-        <div class="max-w-[8ch] text-balance">{{ homeBlock.label }}</div>
+        <div class="max-w-[8ch] text-balance">{{ homeBlock.link?.title }}</div>
       </NuxtLink>
       <div v-else :class="['bg-(--bg-color) text-(--text-color-secondary) col-span-2', `color-${homeBlock.color}`]">
         <SiteNewsletter />

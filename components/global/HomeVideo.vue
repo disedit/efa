@@ -35,7 +35,8 @@ onMounted(() => {
           onLeave: setDark,
           onLeaveBack: unsetDark,
           onEnterBack: unsetDark,
-          onEnter: unsetDark
+          onEnter: unsetDark,
+          invalidateOnRefresh: true,
         }
       })
     })

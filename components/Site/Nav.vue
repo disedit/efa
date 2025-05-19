@@ -26,7 +26,7 @@ function toggleMenu () {
 
 <template>
   <nav
-    class="nav efa-nav fixed flex bg-white top-0 left-0 right-0 px-site py-site xl:py-2 justify-between items-center gap-site transition z-[5000]"
+    class="nav fixed flex bg-white top-0 left-0 right-0 px-site py-site xl:py-2 justify-between items-center gap-site transition z-[5000]"
   >
     <NuxtLink to="/" class="logo text-primary" aria-label="European Free Alliance">
       <LogoEFA class="h-[2rem]" />

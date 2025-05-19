@@ -7,6 +7,10 @@ export const useUtils = () => {
       return link && link.url && link.url.replaceAll(config.public.contentUrl, '')
     },
 
+    page: (page) => {
+      return page.replaceAll(config.public.contentUrl, '')
+    },
+
     isActive: (link) => {
       if (!link || !link.url) {
         return false
