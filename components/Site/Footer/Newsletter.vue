@@ -1,6 +1,6 @@
 <template>
   <form
-    class="newsletter p-site md:p-7 validate bg-cream self-start ms-auto"
+    class="newsletter p-site md:p-7 validate bg-cream self-start ms-auto w-full md:w-auto"
     action="https://e-f-a.us18.list-manage.com/subscribe/post?u=ac6d425391adfe5b91b4c11c5&amp;id=02445d05b4&amp;f_id=007e8ce6f0"
     method="post"
     id="mc-embedded-subscribe-form"

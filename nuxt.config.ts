@@ -33,5 +33,5 @@ export default defineNuxtConfig({
     domains: ['pmf.disedit.com']
   } : {
     provider: 'ipx'
-  },
+  }
 })

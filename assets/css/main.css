@@ -5,6 +5,7 @@
   --color-purple: #773E90;
   --color-orange: #ED8062;
   --color-white: #FAF5F2;
+  --color-true-white: #fff;
   --color-cream: #EAD6CB;
   --color-primary: var(--color-purple);
   --color-secondary: var(--color-orange);
@@ -18,10 +19,13 @@
   --text-4xl: clamp(3.34rem, 4.67vi + 2.17rem, 7.71rem);
   --text-5xl: clamp(4.17rem, 6.52vi + 2.54rem, 10.28rem);
   --spacing-site: 1rem;
+  --spacing-inner: 4.5rem;
   --spacing-navbar: 3.9325rem;
   --spacing-safe-viewport: calc(100svh - var(--spacing-navbar));
   --spacing-safest-viewport: calc(100svh - var(--spacing-navbar) - var(--spacing-site));
   --spacing-viewport: 100svh;
+  --leading-tighter: 1.1;
+  --breakpoint-3xl: 120rem;
   --color-lime-*: initial;
   --color-red-*: initial;
   --color-yellow-*: initial;
@@ -41,6 +45,12 @@
   --color-stone-*: initial;
 }
 
+@media (max-width: 46rem) {
+  :root {
+    --spacing-inner: var(--spacing-site);
+  }
+}
+
 @font-face {
   font-family: 'Aspekta';
   src: url('../fonts/AspektaVF.woff2') format('woff2-variations');
@@ -57,6 +67,20 @@
 
   a {
     color: var(--color-primary);
+  }
+
+  .underlined-on-hover:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 3px;
+  }
+
+  .page-container {
+    width: 100%;
+    max-width: var(--breakpoint-3xl);
+    margin-inline: auto;
+    padding-inline: var(--spacing-inner);
+    padding-block: calc(var(--spacing-inner) / 2);
   }
 
   *:focus-visible {
@@ -83,29 +107,43 @@
         letter-spacing: -0.0225em;
       }
     }
+
+    p:not(:last-child) {
+      margin-bottom: 1em;
+    }
   }
 
   .color-purple {
     --bg-color: var(--color-purple);
     --text-color: var(--color-white);
     --text-color-secondary: var(--color-orange);
+    --bg-color-hover: var(--color-orange);
+    --text-color-hover: var(--color-white);
+    --color-selection-foreground: var(--color-white);
+    --color-selection-background: var(--color-orange);
   }
 
   .color-orange {
     --bg-color: var(--color-orange);
     --text-color: var(--color-white);
     --text-color-secondary: var(--color-purple);
+    --bg-color-hover: var(--color-purple);
+    --text-color-hover: var(--color-cream);
   }
 
   .color-cream {
     --bg-color: var(--color-cream);
     --text-color: var(--color-purple);
     --text-color-secondary: var(--color-purple);
+    --bg-color-hover: var(--color-purple);
+    --text-color-hover: var(--color-cream);
   }
 
   .color-white {
     --bg-color: var(--color-white);
     --text-color: var(--color-purple);
     --text-color-secondary: var(--color-purple);
+    --bg-color-hover: var(--color-purple);
+    --text-color-hover: var(--color-cream);
   }
 }
