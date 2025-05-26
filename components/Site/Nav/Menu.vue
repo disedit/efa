@@ -83,7 +83,7 @@ function unhover() {
   transform: translateY(-3px) scaleY(0);
   transform-origin: 0 0;
   will-change: visibility, opacity, transform;
-  background-color: var(--color-white);
+  background-color: var(--color-true-white);
   border: 3px solid var(--color-primary);
   min-width: 250px;
 
@@ -126,6 +126,7 @@ function unhover() {
 
         &.has-submenu {
           border-color: var(--color-primary);
+          background-color: var(--color-true-white);
         }
       }
     }

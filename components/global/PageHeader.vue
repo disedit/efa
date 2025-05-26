@@ -24,7 +24,7 @@ const currentPage = '#'
         </li>
       </ol>
     </nav>
-    <h1 class="font-extrabold text-balance text-4xl text-purple leading-none">
+    <h1 class="font-extrabold text-balance text-4xl text-purple leading-none tracking-tight">
       {{ block.heading }}
     </h1>
     <p v-if="block.introduction" class="text-purple text-md leading-tighter max-w-[70ch] text-balance">

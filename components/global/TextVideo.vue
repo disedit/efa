@@ -3,8 +3,8 @@ defineProps({ block: Object })
 </script>
 
 <template>
-  <section class="page-container grid lg:grid-cols-[1fr_auto] gap-inner">
-    <div v-html="block.text" class="prose text-md" />
+  <section class="page-container grid lg:grid-cols-3 gap-site">
+    <div v-html="block.text" class="prose text-md lg:col-span-2 pe-inner" />
     <div v-if="block.video">
       <UtilsVideo
         id="PageVideo"
@@ -12,7 +12,6 @@ defineProps({ block: Object })
         autoplay
         show-time
         show-unmute-tooltip
-        class="lg:h-[calc(20rem+45vh)]"
       />
     </div>
   </section>
