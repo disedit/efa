@@ -9,16 +9,7 @@ const { data: profiles } = await useAsyncData(
     .param('ids', props.block.profiles.join(','))
 )
 
-const platforms = {
-  instagram: { name: 'Instagram', icon: 'fa6-brands:instagram' },
-  facebook: { name: 'Facebook', icon: 'fa6-brands:facebook' },
-  x: { name: 'X', icon: 'fa6-brands:x-twitter' },
-  tiktok: { name: 'TikTok', icon: 'fa6-brands:tiktok' },
-  email: { name: 'Email', icon: 'ri:mail-line' },
-  youtube: { name: 'YouTube', icon: 'fa6-brands:youtube' },
-  bluesky: { name: 'Bluesky', icon: 'ri:bluesky-line' },
-  linkedin: { name: 'LinkedIn', icon: 'fa6-brands:linkedin' },
-}
+const { platforms } = useUtils()
 
 const socials = (links) => {
   return links.map(({ platform, url: link }) => {

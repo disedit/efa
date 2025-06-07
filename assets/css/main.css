@@ -65,6 +65,10 @@
     scroll-padding-top: var(--spacing-navbar);
   }
 
+  body:has(dialog[open]) {
+    overflow: hidden;
+  }
+
   a {
     color: var(--color-primary);
   }
@@ -73,6 +77,12 @@
     text-decoration: underline;
     text-underline-offset: 0.2em;
     text-decoration-thickness: 3px;
+  }
+
+  .underlined {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 2px;
   }
 
   .page-container {
