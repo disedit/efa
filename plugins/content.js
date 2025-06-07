@@ -14,6 +14,7 @@ export default defineNuxtPlugin(() => {
   wp.documents = wp.registerRoute('wp/v2', 'document')
   wp.jobs = wp.registerRoute('wp/v2', 'job-posting')
   wp.settings = wp.registerRoute('efa', 'settings')
+  wp.stats = wp.registerRoute('efa', 'stats')
 
   return {
     provide: {

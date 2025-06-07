@@ -9,7 +9,8 @@
   --color-cream: #EAD6CB;
   --color-primary: var(--color-purple);
   --color-secondary: var(--color-orange);
-  --text-sm: clamp(0.7rem, 0.35vi + 0.61rem, 1.03rem);
+  --text-xs: clamp(0.7rem, 0.35vi + 0.61rem, 1.03rem);
+  --text-sm: clamp(0.8rem, 0.45vi + 0.7rem, 1.2rem);
   --text-base: clamp(0.88rem, 0.53vi + 0.74rem, 1.38rem);
   --text-md: clamp(1.09rem, 0.79vi + 0.9rem, 1.83rem);
   --text-lg: clamp(1.37rem, 1.15vi + 1.08rem, 2.44rem);

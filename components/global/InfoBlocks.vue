@@ -1,5 +1,10 @@
 <script setup>
 defineProps({ block: Object })
+
+const { $wp } = useNuxtApp()
+const { data: stats } = await useAsyncData(
+  `stats`, () => $wp.stats()
+)
 </script>
 
 <template>
@@ -13,7 +18,7 @@ defineProps({ block: Object })
       :class="['card basis-full md:basis-[30%]', `color-${card.color}`]"
     >
       <span class="font-medium text-3xl text-(--text-color-secondary) leading-none">
-        {{ card.number }}
+        {{ card.dynamic ? stats[card.dynamic] : card.number }}
       </span>
       <span class="mt-auto text-balance leading-none">
         {{ card.text }}
