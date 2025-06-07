@@ -3,7 +3,7 @@ defineProps({ block: Object })
 </script>
 
 <template>
-  <section class="tabs page-container grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+  <section class="bento-tabs page-container grid md:grid-cols-2 lg:grid-cols-3 gap-10">
     <ElementsTab
       v-for="(tab, i) in block.tabs"
       :key="i"
