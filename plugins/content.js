@@ -7,6 +7,7 @@ export default defineNuxtPlugin(() => {
     endpoint: config.public.wpApiEndpoint
   })
 
+  wp.news = wp.registerRoute('efa', 'news')
   wp.events = wp.registerRoute('wp/v2', 'event')
   wp.parties = wp.registerRoute('efa', 'member-parties')
   wp.profiles = wp.registerRoute('efa', 'profiles')

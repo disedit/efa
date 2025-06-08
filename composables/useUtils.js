@@ -18,9 +18,10 @@ export const useUtils = () => {
 
       const path = link.url.replaceAll(config.public.contentUrl, '')
       const pathSlugs = path.split('/').filter(Boolean)
-      const routeSlugs = route.params.slug
+      const routePath = route.fullPath
+      const routeSlugs = routePath.split('/').filter(Boolean)
 
-      return routeSlugs[0] === pathSlugs[0]
+      return routeSlugs && routeSlugs[0] === pathSlugs[0]
     },
 
     componentName: (name) => {

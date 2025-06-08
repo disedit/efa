@@ -56,7 +56,7 @@ function unhover() {
       <NuxtLink
         v-else
         :to="link(item.link)"
-        class="menu-link transition"
+        :class="['menu-link transition', { active: isActive(item.link) }]"
       >
         {{ item.link?.title }}
       </NuxtLink>
