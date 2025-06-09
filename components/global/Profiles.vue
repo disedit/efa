@@ -11,7 +11,7 @@ const { data: profiles } = await useAsyncData(
 </script>
 
 <template>
-  <section class="page-container profiles grid gap-10">
+  <section class="page-container profiles grid gap-site md:gap-10">
     <ElementsProfile
       v-for="profile in profiles"
       :key="profile.id"
@@ -22,6 +22,24 @@ const { data: profiles } = await useAsyncData(
 
 <style lang="scss" scoped>
 .profiles {
-  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-card-width, 10rem), 1fr));
+}
+
+@media (min-width: 12rem) {
+  .profiles {
+    --min-card-width: 16rem;
+  }
+}
+
+@media (min-width: 42rem) {
+  .profiles {
+    --min-card-width: 20rem;
+  }
+}
+
+@media (min-width: 100rem) {
+  .profiles {
+    --min-card-width: 24rem;
+  }
 }
 </style>

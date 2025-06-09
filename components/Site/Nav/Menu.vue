@@ -138,7 +138,6 @@ function unhover() {
     padding: .25em .5em;
     border: var(--border-width) solid transparent;
     border-bottom: 0;
-    background: var(--color-white);
 
     &:hover:not(.has-submenu) {
       text-decoration: underline;

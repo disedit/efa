@@ -1,6 +1,4 @@
 <script setup>
-import { ElementsMemberParty } from '#components'
-
 defineProps({ block: Object })
 const { $wp } = useNuxtApp()
 const { data: members } = await useAsyncData(

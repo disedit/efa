@@ -10,6 +10,7 @@
   --color-blue: #3b97d3;
   --color-yellow: #f0c419;
   --color-teal: #26b999;
+  --color-black: #18141a;
   --color-primary: var(--color-purple);
   --color-secondary: var(--color-orange);
   --text-xs: clamp(0.7rem, 0.35vi + 0.61rem, 1.03rem);

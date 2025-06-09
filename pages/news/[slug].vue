@@ -69,7 +69,7 @@ useHead({ title })
             :alt="post.thumbnail.alt"
             :img-attrs="{ class: 'w-full mb-6' }"
           />
-          <div v-html="post.content" class="text-base prose max-w-[85ch]" />
+          <div v-html="post.content" class="text-base text-black prose max-w-[85ch]" />
 
           <div v-if="post.tags || post.categories" class="flex gap-2 text-sm text-primary mt-8 font-medium">
             <Icon name="ri:price-tag-3-line" class="text-base relative translate-y-(--border-width)" />

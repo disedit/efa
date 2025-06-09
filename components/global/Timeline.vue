@@ -11,7 +11,9 @@ defineProps({ block: Object })
         :key="i"
         class="timeline-item grid grid-cols-[1fr_1fr_4fr] gap-8"
       >
-        <h3 class="text-primary text-3xl tracking-tight">{{ milestone.year }}</h3>
+        <h3 class="text-primary text-3xl tracking-tight">
+          <div class="sticky top-navbar">{{ milestone.year }}</div>
+        </h3>
         <div>
           <NuxtPicture
             v-if="milestone.image"
