@@ -9,7 +9,7 @@ export default defineNuxtPlugin(() => {
 
   wp.news = wp.registerRoute('efa', 'news')
   wp.post = wp.registerRoute('efa', 'post')
-  wp.events = wp.registerRoute('wp/v2', 'event')
+  wp.events = wp.registerRoute('efa', 'events')
   wp.parties = wp.registerRoute('efa', 'member-parties')
   wp.profiles = wp.registerRoute('efa', 'profiles')
   wp.campaigns = wp.registerRoute('wp/v2', 'campaign')
