@@ -3,7 +3,7 @@ const settings = await useSettings()
 </script>
 
 <template>
-  <aside class="bg-cream p-site md:p-6 text-primary self-start sticky top-navbar text-sm">
+  <div class="bg-cream p-site md:p-6 text-primary self-start text-sm">
     <h2 class="text-lg font-bold leading-[1] mb-2">
       {{ settings.press_corner.title }}
     </h2>
@@ -32,5 +32,5 @@ const settings = await useSettings()
       <Icon name="ri:download-cloud-2-line" />
       <span class="underlined-to-bold">Press kit</span>
     </a>
-  </aside>
+  </div>
 </template>

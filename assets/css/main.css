@@ -64,6 +64,7 @@
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
     scroll-padding-top: var(--spacing-navbar);
+    font-size: .85rem;
   }
 
   body:has(dialog[open]) {
@@ -119,6 +120,7 @@
   .prose {
     a {
       text-decoration: underline;
+      transition: .25s ease;
 
       &:hover {
         font-weight: 700;
@@ -128,6 +130,14 @@
 
     p:not(:last-child) {
       margin-bottom: 1em;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: .75em;
+    }
+
+    :is(h1, h2, h3, h4, h5, h6):not(:first-child) {
+      margin-top: 1.5em;
     }
   }
 

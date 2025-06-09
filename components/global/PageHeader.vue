@@ -8,15 +8,25 @@ const currentPage = '#'
   <header class="page-container pt-inner">
     <nav aria-label="Breadcrumb" class="breadcrumb relative z-1 font-bold text-base">
       <ol class="flex items-center">
-        <li v-for="page in block.breadcrumbs" :key="page.ID" class="flex items-center text-purple">
-          <NuxtLink
-            :to="`/${page.post_name}`"
-            class="underlined-on-hover"
-          >
-            {{ page.post_title }}
-          </NuxtLink>
-          <Icon name="ri:arrow-right-s-line" class="relative top-[.1em]" />
-        </li>
+        <template v-for="page in block.breadcrumbs" :key="page.ID" >
+          <li v-if="!page.hidden" class="flex items-center text-purple">
+            <NuxtLink
+              v-if="page.post_name"
+              :to="`/${page.post_name}`"
+              class="underlined-on-hover flex items-center gap-1"
+            >
+              <span
+                v-if="page.color"  
+                :class="['h-[1em] w-[1em] bg-[var(--bg-color,var(--color-primary))] rounded-full', `color-${page.color}`]"
+              />
+              {{ page.post_title }}
+            </NuxtLink>
+            <span v-else>
+              {{ page.post_title }}
+            </span>
+            <Icon name="ri:arrow-right-s-line" class="relative top-[.1em]" />
+          </li>
+        </template>
         <li class="sr-only">
           <NuxtLink :to="currentPage">
             {{ block.heading }}

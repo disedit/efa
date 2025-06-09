@@ -3,17 +3,16 @@ export const usePost = async (slug) => {
 
   const { data: post } = await useAsyncData(
     `post-${slug}`,
-    () => $wp.posts()
-      .slug(slug)
-      .param('acf_format', 'standard')
+    () => $wp.post()
+      .param('slug', slug)
   )
 
-  if (!post.value.length) {
+  if (!post.value) {
     throw createError({
       statusCode: 404,
       statusMessage: 'Post Not Found'
     })
   }
 
-  return post.value[0]
+  return post.value
 }

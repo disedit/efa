@@ -46,10 +46,10 @@ export const useUtils = () => {
       if (!post) return
       
       if (post.tags) {
-        return post.tags[0]
+        return { type: 'tag', ...post.tags[0] }
       } 
 
-      return post.categories[0]
+      return { type: 'category', ...post.categories[0] }
     }
   }
 }

@@ -15,13 +15,13 @@ const postCategory = category(props.post)
   <article>
     <NuxtLink
       :to="`/news/${post.slug}`"
-      class="flex group gap-site"
+      class="flex flex-col md:flex-row group gap-site border-b-2 pb-8 md:pb-0 mb-4 md:mb-0 md:border-b-0"
     >
       <NuxtPicture
-        v-if="post.thumbnail"
-        :src="post.thumbnail"
-        :alt="post.title"
-        :img-attrs="{ class: 'aspect-square w-[20rem] object-cover' }"
+        v-if="post.thumbnail?.url"
+        :src="post.thumbnail.url"
+        :alt="post.thumbnail.alt"
+        :img-attrs="{ class: 'aspect-[16/7] md:aspect-square w-full md:w-[20rem] object-cover' }"
         class="shrink-0"
       />
       <div class="flex flex-col gap-site">
@@ -34,7 +34,6 @@ const postCategory = category(props.post)
         </h2>
         <div class="text-sm mt-auto" v-html="post.excerpt" />
       </div>
-      
     </NuxtLink>
   </article>
 </template>
