@@ -24,19 +24,23 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>
+  <div class="flex items-center justify-between gap-site text-md mt-20">
     <NuxtLink
       v-if="page > 1"
       :to="`/news/page/${page - 1}/?categories=${categories || ''}&tags=${tags || ''}`"
+      class="font-bold underlined-on-hover flex items-center gap-2"
     >
-      Previous Page
+      <Icon name="ri:arrow-left-line" />
+      Previous
     </NuxtLink>
-    <span v-else />
+    <span v-else-if="page > 1" />
     <NuxtLink
       v-if="total >= perPage"
       :to="`/news/page/${page + 1}/?categories=${categories || ''}&tags=${tags || ''}`"
+      class="font-bold underlined-on-hover flex items-center gap-2"
     >
-      Next Page
+      {{ page === 1 ? 'More news' : 'Next' }}
+      <Icon name="ri:arrow-right-line" />
     </NuxtLink>
     <span v-else />
   </div>

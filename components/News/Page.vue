@@ -36,5 +36,6 @@ const tagNames = props.tags.map(tag => tag.name).join(', ')
     :per-page="perPage"
     :categories="categoryIds"
     :tags="tagIds"
+    class="page-container"
   />
 </template>

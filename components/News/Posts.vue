@@ -25,12 +25,13 @@ defineProps({
 
 <template>
   <div>
-    <NewsPost
-      v-for="post in posts"
-      :key="post.id"
-      :post="post"
-    />
-    Pagination:
+    <div class="flex flex-col gap-site md:gap-20">
+      <NewsPost
+        v-for="post in posts"
+        :key="post.id"
+        :post="post"
+      />
+    </div>
     <NewsPagination
       :total="posts.length"
       :page="page"

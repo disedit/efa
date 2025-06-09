@@ -8,12 +8,12 @@ defineProps({
 </script>
 
 <template>
-  <div>
+  <section class="grid lg:grid-cols-2 gap-site lg:gap-12">
     <NewsHighlightedPost
       v-for="post in posts"
       :key="post.id"
       :post="post"
     />
-  </div>
+  </section>
 </template>
 

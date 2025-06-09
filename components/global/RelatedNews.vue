@@ -12,12 +12,18 @@ const { data: posts } = await useAsyncData(
 
 <template>
   <section class="page-container">
-    <h2>Related News</h2>
-    <NuxtLink
-      :to="`/news/page/1/?tags=${props.block.tags.join(',')}`"
-    >
-      More
-    </NuxtLink>
+    <div class="flex items-center justify-between gap-site text-primary mb-6">
+      <h2 class="text-md font-bold">
+        Related News
+      </h2>
+      <NuxtLink
+        :to="`/news/page/1/?tags=${props.block.tags.join(',')}`"
+        class="flex items-center gap-1 font-medium text-base underlined-on-hover"
+      >
+        More
+        <Icon name="ri:arrow-right-line" />
+      </NuxtLink>
+    </div>
     <NewsHighlightedPosts :posts="posts.posts" />
   </section>
 </template>

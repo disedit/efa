@@ -84,7 +84,6 @@ defineExpose({
   }
 
   .shadow {
-    content: '';
     position: absolute;
     inset: 0;
     border: 3px solid var(--color-primary);

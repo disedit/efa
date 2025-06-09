@@ -14,7 +14,7 @@ const { link } = useUtils()
     <li v-for="(item, i) in links" :key="i">
       <NuxtLink
         :to="link(item.link)"
-        class="text-sm underline hover:font-bold hover:-tracking-[0.0225em]"
+        class="text-sm underlined-to-bold"
       >
         {{ item.link.title }}
       </NuxtLink>

@@ -7,6 +7,9 @@
   --color-white: #FAF5F2;
   --color-true-white: #fff;
   --color-cream: #EAD6CB;
+  --color-blue: #3b97d3;
+  --color-yellow: #f0c419;
+  --color-teal: #26b999;
   --color-primary: var(--color-purple);
   --color-secondary: var(--color-orange);
   --text-xs: clamp(0.7rem, 0.35vi + 0.61rem, 1.03rem);
@@ -29,14 +32,11 @@
   --breakpoint-3xl: 120rem;
   --color-lime-*: initial;
   --color-red-*: initial;
-  --color-yellow-*: initial;
   --color-amber-*: initial;
   --color-green-*: initial;
   --color-emerald-*: initial;
-  --color-teal-*: initial;
   --color-cyan-*: initial;
   --color-sky-*: initial;
-  --color-blue-*: initial;
   --color-indigo-*: initial;
   --color-violet-*: initial;
   --color-fuchsia-*: initial;
@@ -80,10 +80,17 @@
     text-decoration-thickness: 3px;
   }
 
-  .underlined {
+  .underlined,
+  .underlined-to-bold {
     text-decoration: underline;
     text-underline-offset: 0.2em;
     text-decoration-thickness: 2px;
+    transition: .25s ease;
+  }
+
+  .underlined-to-bold:hover {
+    font-weight: 700;
+    letter-spacing: -0.0225em;
   }
 
   .page-container {
@@ -156,5 +163,17 @@
     --text-color-secondary: var(--color-purple);
     --bg-color-hover: var(--color-purple);
     --text-color-hover: var(--color-cream);
+  }
+
+  .color-blue {
+    --bg-color: var(--color-blue);
+  }
+
+  .color-yellow {
+    --bg-color: var(--color-yellow);
+  }
+
+  .color-teal {
+    --bg-color: var(--color-teal);
   }
 }

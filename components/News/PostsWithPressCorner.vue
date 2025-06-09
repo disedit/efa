@@ -24,7 +24,7 @@ defineProps({
 </script>
 
 <template>
-  <section class="page-container grid grid-cols-2">
+  <section class="grid gap-site md:gap-12 md:grid-cols-[1fr_28rem]">
     <NewsPosts
       :posts="posts"
       :page="page"
@@ -35,4 +35,3 @@ defineProps({
     <NewsPressCorner />
   </section>
 </template>
-

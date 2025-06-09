@@ -40,6 +40,16 @@ export const useUtils = () => {
       youtube: { name: 'YouTube', icon: 'fa6-brands:youtube' },
       bluesky: { name: 'Bluesky', icon: 'ri:bluesky-line' },
       linkedin: { name: 'LinkedIn', icon: 'fa6-brands:linkedin' },
+    },
+
+    category: (post) => {
+      if (!post) return
+      
+      if (post.tags) {
+        return post.tags[0]
+      } 
+
+      return post.categories[0]
     }
   }
 }

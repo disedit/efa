@@ -15,7 +15,7 @@ const restOfPosts = posts.value.posts.slice(2)
 
 <template>
   <section class="page-container">
-    <NewsHighlightedPosts :posts="firsTwoPosts" />
+    <NewsHighlightedPosts :posts="firsTwoPosts" class="mb-20" />
     <NewsPostsWithPressCorner
       :posts="restOfPosts"
       :per-page="8"
