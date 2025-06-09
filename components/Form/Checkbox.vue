@@ -15,7 +15,7 @@
   color: currentColor;
   width: 1.25em;
   height: 1.25em;
-  border: 3px solid var(--color-primary);
+  border: var(--border-width) solid var(--color-primary);
   border-radius: 0;
   display: grid;
   place-content: center;

@@ -21,7 +21,7 @@ defineProps({
       }
     ]">
       <div :class="[
-        'flex items-center gap-2 bg-true-white w-fit border-3 border-b-0 text-primary font-bold tracking-tight',
+        'tab-flap flex items-center gap-2 bg-true-white w-fit border-3 border-b-0 text-primary font-bold tracking-tight',
         {
           'py-2 px-site': labelSize === 'md',
           'py-1 px-site': labelSize === 'base',
@@ -46,7 +46,7 @@ defineProps({
 <style lang="scss" scoped>
 .tab {
   --shift-by: 1.5rem;
-  --label-offset: 3px;
+  --label-offset: var(--border-width);
 
   &.rises:hover {
     .tab-label {
@@ -85,6 +85,20 @@ defineProps({
     transition: .25s ease;
   }
 
+  .tab-flap {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: var(--border-width);
+      background: var(--color-true-white);
+    }
+  }
+
   .tab-content {
     position: relative;
     z-index: 5;
@@ -96,7 +110,7 @@ defineProps({
   .tab-shadow {
     position: absolute;
     inset: 0;
-    border: 3px solid var(--color-primary);
+    border: var(--border-width) solid var(--color-primary);
     background: var(--color-true-white);
     transition: .25s ease;
     transform: translateY(calc(var(--label-offset) * -1));

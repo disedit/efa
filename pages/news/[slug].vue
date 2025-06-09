@@ -72,7 +72,7 @@ useHead({ title })
           <div v-html="post.content" class="text-base prose max-w-[85ch]" />
 
           <div v-if="post.tags || post.categories" class="flex gap-2 text-sm text-primary mt-8 font-medium">
-            <Icon name="ri:price-tag-3-line" class="text-base relative translate-y-[3px]" />
+            <Icon name="ri:price-tag-3-line" class="text-base relative translate-y-(--border-width)" />
             <ul class="flex flex-wrap gap-2">
               <li v-for="category in post.categories" :key="category.id">
                 <NuxtLink :to="`/news/page/1/?categories=${category.id}`" class="hover:underline">

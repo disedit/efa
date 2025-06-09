@@ -30,6 +30,7 @@
   --spacing-viewport: 100svh;
   --leading-tighter: 1.1;
   --breakpoint-3xl: 120rem;
+  --border-width: 2.5px;
   --color-lime-*: initial;
   --color-red-*: initial;
   --color-amber-*: initial;
@@ -78,7 +79,7 @@
   .underlined-on-hover:hover {
     text-decoration: underline;
     text-underline-offset: 0.2em;
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: var(--border-width);
   }
 
   .underlined,
@@ -103,8 +104,8 @@
   }
 
   *:focus-visible {
-    outline: 3px solid var(--color-focus, var(--color-primary));
-    outline-offset: 3px;
+    outline: var(--border-width) solid var(--color-focus, var(--color-primary));
+    outline-offset: var(--border-width);
   }
 
   ::selection {
@@ -126,6 +127,28 @@
         font-weight: 700;
         letter-spacing: -0.0225em;
       }
+    }
+
+    ul, ol {
+      margin-bottom: 1em;
+      padding-left: 1.5em;
+
+      li {
+        margin-bottom: .25em;
+      }
+
+      li::marker {
+        font-weight: 700;
+        color: var(--color-primary);
+      }
+    }
+
+    ul {
+      list-style: disc;
+    }
+
+    ol {
+      list-style: decimal;
     }
 
     p:not(:last-child) {

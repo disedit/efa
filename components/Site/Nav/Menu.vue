@@ -80,11 +80,11 @@ function unhover() {
   position: absolute;
   visibility: hidden;
   transition: visibility 0s linear .2s, transform .2s ease;
-  transform: translateY(-3px) scaleY(0);
+  transform: translateY(calc(var(--border-width) * -1)) scaleY(0);
   transform-origin: 0 0;
   will-change: visibility, opacity, transform;
   background-color: var(--color-true-white);
-  border: 3px solid var(--color-primary);
+  border: var(--border-width) solid var(--color-primary);
   min-width: 250px;
 
   &-link {
@@ -115,7 +115,7 @@ function unhover() {
       .submenu {
         visibility: visible;
         transition-delay: 0s;
-        transform: translateY(-3px) scaleY(1);
+        transform: translateY(calc(var(--border-width) * -1)) scaleY(1);
         z-index: 1000;
       }
 
@@ -136,14 +136,14 @@ function unhover() {
     display: block;
     position: relative;
     padding: .25em .5em;
-    border: 3px solid transparent;
+    border: var(--border-width) solid transparent;
     border-bottom: 0;
     background: var(--color-white);
 
     &:hover:not(.has-submenu) {
       text-decoration: underline;
       text-underline-offset: 0.2em;
-      text-decoration-thickness: 3px;
+      text-decoration-thickness: var(--border-width);
     }
 
     &:hover,

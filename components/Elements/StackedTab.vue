@@ -13,7 +13,7 @@ defineEmits(['selected'])
     >
       <slot name="label" />
     </button>
-    <div class="tab-content bg-true-white border-3 border-primary p-12 relative z-1 -translate-y-[3px] h-full -mb-[3px]">
+    <div class="tab-content bg-true-white border-3 border-primary p-12 relative z-1 -translate-y-(--border-width) h-full -mb-(--border-width)">
       <slot />
     </div>
   </article>

@@ -43,7 +43,7 @@ defineExpose({
           <Icon name="ri:close-large-fill" />
         </button>
       </div>
-      <div class="relative -translate-y-[3px]">
+      <div class="relative -translate-y-(--border-width)">
         <div class="modal-content relative border-3 border-primary bg-true-white p-4 text-base">
           <slot />
         </div>
@@ -77,6 +77,17 @@ defineExpose({
 
   &-tab {
     z-index: 10;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: var(--border-width);
+      background: var(--color-true-white);
+    }
   }
 
   &-content {
@@ -86,7 +97,7 @@ defineExpose({
   .shadow {
     position: absolute;
     inset: 0;
-    border: 3px solid var(--color-primary);
+    border: var(--border-width) solid var(--color-primary);
     background: var(--color-true-white);
     transition: .5s ease;
 

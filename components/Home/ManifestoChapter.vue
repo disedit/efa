@@ -113,7 +113,7 @@ function animateOut() {
     text-decoration: underline;
     text-decoration: underline;
     text-underline-offset: 0.2em;
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: var(--border-width);
     margin-top: 1em;
     padding-left: .5em;
     position: relative;
