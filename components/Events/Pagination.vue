@@ -19,7 +19,7 @@ const props = defineProps({
   <div class="flex items-center justify-between gap-site text-md mt-20">
     <NuxtLink
       v-if="page > 1"
-      :to="`/events/page/${page - 1}`"
+      :to="page > 2 ? `/events/page/${page - 1}` : '/events'"
       class="font-bold underlined-on-hover flex items-center gap-2"
     >
       <Icon name="ri:arrow-left-line" />

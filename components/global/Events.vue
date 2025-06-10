@@ -11,8 +11,11 @@ const { data: events } = await useAsyncData(
 <template>
   <section class="page-container">
     <template v-if="events.upcoming.length > 0">
-      <h2>Upcoming events</h2>
-      <div class="flex flex-col gap-site md:gap-10">
+      <h2 class="text-primary font-extrabold text-md leading-[1] mb-4 md:mb-12 flex items-center gap-2 bg-white py-4 sticky top-navbar z-10 border-b-2 border-primary md:border-b-0">
+        Upcoming events
+        <Icon name="ri:arrow-right-up-line" />
+      </h2>
+      <div class="flex flex-col gap-site md:gap-24">
         <EventsEvent
           v-for="event in events.upcoming"
           :key="event.id"
@@ -20,7 +23,11 @@ const { data: events } = await useAsyncData(
         />
       </div>
 
-      <h2>Past events</h2>
+      <h2 class="text-primary font-extrabold text-md leading-[1] mb-4 md:mb-12 mt-12 md:mt-24 flex items-center gap-2 bg-white py-4 sticky top-navbar z-10 border-b-2 border-primary md:border-b-0">
+        <Icon name="ri:arrow-left-down-line" />
+        Past events
+        
+      </h2>
     </template>
     <EventsList
       :events="events.past"
@@ -29,7 +36,3 @@ const { data: events } = await useAsyncData(
     />
   </section>
 </template>
-
-<style>
-
-</style>
