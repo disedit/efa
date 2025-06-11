@@ -2,11 +2,6 @@
 const { params } = useRoute()
 const settings = await useSettings()
 const event = await useEvent(params.slug)
-
-/* Load related posts */
-const { $wp } = useNuxtApp()
-
-/* Event */
 const { humanDate, time } = useDate()
 
 /* SEO Metatags */

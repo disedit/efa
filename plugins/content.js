@@ -15,7 +15,8 @@ export default defineNuxtPlugin(() => {
   wp.profiles = wp.registerRoute('efa', 'profiles')
   wp.campaigns = wp.registerRoute('wp/v2', 'campaign')
   wp.documents = wp.registerRoute('wp/v2', 'document')
-  wp.jobs = wp.registerRoute('wp/v2', 'job-posting')
+  wp.jobs = wp.registerRoute('efa', 'jobs')
+  wp.job = wp.registerRoute('efa', 'job')
   wp.settings = wp.registerRoute('efa', 'settings')
   wp.stats = wp.registerRoute('efa', 'stats')
 

@@ -34,7 +34,7 @@ defineProps({
       </div>
     </div>
     <div class="relative h-full flex">
-      <div class="tab-content bg-true-white border-3 border-primary p-site relative z-1 h-full">
+      <div class="tab-content bg-true-white border-3 border-primary p-site relative z-1 h-full w-full">
         <slot />
       </div>
       <div class="tab-shadow tab-shadow-1" />
