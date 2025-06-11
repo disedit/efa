@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="bg-true-white border-3 border-primary divide-primary divide-y-3">
+  <div class="bg-true-white bordered divide-primary divide-y-(--border-width)">
     <NuxtLink
       v-for="post in posts"
       :key="post.id"

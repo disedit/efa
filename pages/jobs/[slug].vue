@@ -29,7 +29,7 @@ useHead({ title })
 </script>
 
 <template>
-  <main class="min-h-safe-viewport">
+  <main class="min-h-page">
     <PageHeader :block="{
       breadcrumbs: [
         { post_name: 'work-with-us', post_title: 'Work with us' },

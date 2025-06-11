@@ -28,6 +28,7 @@
   --spacing-navbar: 3.9325rem;
   --spacing-safe-viewport: calc(100svh - var(--spacing-navbar));
   --spacing-safest-viewport: calc(100svh - var(--spacing-navbar) - var(--spacing-site));
+  --spacing-page: calc(100svh - var(--spacing-navbar) - var(--spacing-site) - 32rem);
   --spacing-viewport: 100svh;
   --leading-tighter: 1.1;
   --breakpoint-3xl: 120rem;
@@ -187,6 +188,10 @@
         padding: .25em;
       }
     }
+  }
+
+  .bordered {
+    border: var(--border-width) solid var(--color-primary);
   }
 
   .color-purple {

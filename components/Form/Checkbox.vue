@@ -9,7 +9,7 @@
 <style lang="scss" scoped>
 .checkbox-input {
   appearance: none;
-  background-color: var(--color-white);
+  background-color: var(--color-true-white);
   margin: 0;
   font: inherit;
   color: currentColor;

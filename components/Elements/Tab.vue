@@ -4,6 +4,10 @@ defineProps({
     type: Boolean,
     default: false
   },
+  edge: {
+    type: Boolean,
+    default: false
+  },
   labelSize: {
     type: String,
     default: 'md'
@@ -21,7 +25,7 @@ defineProps({
       }
     ]">
       <div :class="[
-        'tab-flap flex items-center gap-2 bg-true-white w-fit border-3 border-b-0 text-primary font-bold tracking-tight',
+        'tab-flap flex items-center gap-2 bg-true-white w-fit bordered border-b-0 text-primary font-bold tracking-tight',
         {
           'py-2 px-site': labelSize === 'md',
           'py-1 px-site': labelSize === 'base',
@@ -34,7 +38,7 @@ defineProps({
       </div>
     </div>
     <div class="relative h-full flex">
-      <div class="tab-content bg-true-white border-3 border-primary p-site relative z-1 h-full w-full">
+      <div :class="['tab-content bg-true-white bordered relative z-1 h-full w-full', { 'p-site': !edge }]">
         <slot />
       </div>
       <div class="tab-shadow tab-shadow-1" />

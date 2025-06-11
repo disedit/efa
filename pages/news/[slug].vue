@@ -44,7 +44,7 @@ useHead({ title })
 </script>
 
 <template>
-  <main class="min-h-safe-viewport">
+  <main class="min-h-page">
     <div v-if="post.fields?.layout === 'image_header' && post.thumbnail?.url" class="-mb-[calc(2.5rem+7vh)]">
       <NuxtPicture
         :src="post.thumbnail.url"

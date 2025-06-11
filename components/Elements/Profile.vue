@@ -16,7 +16,7 @@ const socials = props.profile.links ? props.profile.links.map(({ platform, url: 
 
 <template>
   <article class="profile">
-    <div class="profile-card border-3 gap-3 border-primary bg-true-white p-3 md:p-site">
+    <div class="profile-card bordered gap-3 bg-true-white p-3 md:p-site">
       <div class="profile-picture">
         <NuxtImg
           :src="profile.picture"
@@ -47,8 +47,8 @@ const socials = props.profile.links ? props.profile.links.map(({ platform, url: 
         class="mt-auto text-base"
       />
     </div>
-    <div class="profile-shadow shadow-1 border-3 bg-true-white border-primary" />
-    <div class="profile-shadow shadow-2 border-3 bg-true-white border-primary" />
+    <div class="profile-shadow shadow-1 bordered bg-true-white" />
+    <div class="profile-shadow shadow-2 bordered bg-true-white" />
   </article>
 </template>
 

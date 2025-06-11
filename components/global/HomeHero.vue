@@ -88,7 +88,7 @@ const tag = props.block.link?.url ? resolveComponent('NuxtLink') : 'div'
       </p>
 
       <p v-if="block.cta">
-        <span class="inline-block text-base bg-white text-purple font-bold p-2 px-4 border-3">
+        <span class="inline-block text-base bg-white text-purple font-bold p-2 px-4 bordered">
           {{ block.cta }}
         </span>
       </p>

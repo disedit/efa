@@ -27,7 +27,7 @@ useHead({ title })
 </script>
 
 <template>
-  <main class="min-h-safe-viewport">
+  <main class="min-h-page">
     <UtilsBlocks :blocks="page.acf?.blocks" />
   </main>
 </template>
