@@ -4,7 +4,7 @@ defineProps({ block: Object })
 
 <template>
   <section class="page-container grid lg:grid-cols-3 gap-site">
-    <div v-html="block.text" class="prose text-md lg:col-span-2 pe-inner" />
+    <div v-html="block.text" :class="['prose hyphens-auto text-pretty text-md lg:col-span-2 pe-inner', { 'text-purple': block.text_color === 'purple' }]" />
     <div v-if="block.video">
       <UtilsVideo
         id="PageVideo"

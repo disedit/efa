@@ -1,19 +1,18 @@
-export const usePage = async (slug) => {
+export const usePage = async (slugs) => {
   const { $wp } = useNuxtApp()
-
-  const { data: pages } = await useAsyncData(
+  const slug = Array.isArray(slugs) ? slugs.join('/') : slugs
+  const { data: page } = await useAsyncData(
     `page-${slug}`,
-    () => $wp.pages()
-      .slug(slug || 'home')
-      .param('acf_format', 'standard')
+    () => $wp.page()
+      .param('path', slug || 'home')
   )
 
-  if (!pages.value.length) {
+  if (!page.value) {
     throw createError({
       statusCode: 404,
       statusMessage: 'Page Not Found'
     })
   }
 
-  return pages.value[0]
+  return page.value
 }

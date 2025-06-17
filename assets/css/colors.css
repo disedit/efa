@@ -1,0 +1,52 @@
+@layer base {
+  .selection-orange {
+    --color-selection-foreground: var(--color-white);
+    --color-selection-background: var(--color-orange);
+  }
+
+  .color-purple {
+    --bg-color: var(--color-purple);
+    --text-color: var(--color-white);
+    --text-color-secondary: var(--color-orange);
+    --bg-color-hover: var(--color-orange);
+    --text-color-hover: var(--color-white);
+    --color-selection-foreground: var(--color-white);
+    --color-selection-background: var(--color-orange);
+  }
+
+  .color-orange {
+    --bg-color: var(--color-orange);
+    --text-color: var(--color-white);
+    --text-color-secondary: var(--color-purple);
+    --bg-color-hover: var(--color-purple);
+    --text-color-hover: var(--color-cream);
+  }
+
+  .color-cream {
+    --bg-color: var(--color-cream);
+    --text-color: var(--color-purple);
+    --text-color-secondary: var(--color-purple);
+    --bg-color-hover: var(--color-purple);
+    --text-color-hover: var(--color-cream);
+  }
+
+  .color-white {
+    --bg-color: var(--color-white);
+    --text-color: var(--color-purple);
+    --text-color-secondary: var(--color-purple);
+    --bg-color-hover: var(--color-purple);
+    --text-color-hover: var(--color-cream);
+  }
+
+  .color-blue {
+    --bg-color: var(--color-blue);
+  }
+
+  .color-yellow {
+    --bg-color: var(--color-yellow);
+  }
+
+  .color-teal {
+    --bg-color: var(--color-teal);
+  }
+}

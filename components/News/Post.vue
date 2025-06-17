@@ -12,7 +12,7 @@ const postCategory = category(props.post)
 </script>
 
 <template>
-  <article>
+  <article class="post">
     <NuxtLink
       :to="`/news/${post.slug}`"
       class="flex flex-col md:flex-row group gap-site border-b-2 pb-8 md:pb-0 mb-4 md:mb-0 md:border-b-0"
@@ -37,3 +37,20 @@ const postCategory = category(props.post)
     </NuxtLink>
   </article>
 </template>
+
+<style lang="scss" scoped>
+.post {
+  animation: fly-in ease both;
+  animation-timeline: view();
+  animation-range: 0% 35%;
+}
+
+@keyframes fly-in {
+  from {
+    transform: translateY(15%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+</style>

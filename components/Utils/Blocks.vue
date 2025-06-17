@@ -2,7 +2,11 @@
 defineProps({
   blocks: {
     type: Array,
-    required: true,
+    required: true
+  },
+  context: {
+    type: Object,
+    default: () => null
   },
 })
 
@@ -15,5 +19,6 @@ const { componentName } = useUtils()
     :key="i"
     :is="componentName(block.acf_fc_layout)"
     :block="block"
+    :context="context"
   />
 </template>

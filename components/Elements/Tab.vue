@@ -95,10 +95,10 @@ defineProps({
     &::after {
       content: '';
       position: absolute;
-      bottom: -1px;
+      bottom: calc(var(--border-width) * -1.5);
       left: 0;
       right: 0;
-      height: var(--border-width);
+      height: calc(var(--border-width) * 2);
       background: var(--color-true-white);
     }
   }
