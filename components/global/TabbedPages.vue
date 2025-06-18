@@ -9,11 +9,8 @@ defineProps({ block: Object, context: Object })
     >
       <UtilsBlocks
         :blocks="block.content"
+        :context="context"
       />
     </ElementsTabbedPages>
   </section>
 </template>
-
-<style>
-
-</style>

@@ -11,7 +11,7 @@ export const useUtils = () => {
       return page.replaceAll(config.public.contentUrl, '')
     },
 
-    isActive: (link) => {
+    isActive: (link, depth = 0) => {
       if (!link || !link.url) {
         return false
       }
@@ -21,7 +21,7 @@ export const useUtils = () => {
       const routePath = route.fullPath
       const routeSlugs = routePath.split('/').filter(Boolean)
 
-      return routeSlugs && routeSlugs[0] === pathSlugs[0]
+      return routeSlugs && routeSlugs[depth] === pathSlugs[depth]
     },
 
     componentName: (name) => {
