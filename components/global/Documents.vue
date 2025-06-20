@@ -16,6 +16,7 @@ const hasOneFile = (document) => {
             'has-cover': !!document.cover
           }]"
           :href="hasOneFile(document) && document.files[0] ? document.files[0].file.url : null"
+          target="_blank"
         >
           <NuxtImg
             v-if="document.cover"

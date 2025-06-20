@@ -30,7 +30,12 @@ const postCategory = category(props.post)
           :alt="post.thumbnail.alt"
           :img-attrs="{ class: 'aspect-[16/7] w-full object-cover' }"
         />
-        <h2 :class="['font-extrabold leading-[1]', {'text-lg': !!post.thumbnail?.url, 'text-2xl': !post.thumbnail?.url}]">
+        <h2
+          :class="[
+            'font-extrabold leading-[1]',
+            { 'text-lg': !!post.thumbnail?.url, 'text-2xl': !post.thumbnail?.url }
+          ]"
+        >
           {{ post.title }}
         </h2>
         <p class="text-sm mt-auto">

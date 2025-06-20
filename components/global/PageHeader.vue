@@ -7,7 +7,7 @@ const { page } = useUtils()
 
 <template>
   <header class="page-container pt-inner">
-    <nav v-if="!block.hide_breadcrumbs" aria-label="Breadcrumb" class="breadcrumb relative z-1 font-bold text-base">
+    <nav v-if="!block.hide_breadcrumbs && context.breadcrumbs" aria-label="Breadcrumb" class="breadcrumb relative z-1 font-bold text-base">
       <ol class="flex items-center">
         <template v-for="item in context.breadcrumbs" :key="item.ID || item.id" >
           <li v-if="!item.hidden" class="flex items-center text-purple">
@@ -35,7 +35,12 @@ const { page } = useUtils()
         </li>
       </ol>
     </nav>
-    <h1 class="font-extrabold text-balance text-4xl text-purple leading-none tracking-tight">
+    <h1
+      class="font-extrabold text-balance text-4xl text-purple leading-none tracking-tight"
+      :style="{
+        'view-transition-name': block.headingViewTransitionName
+      }"
+    >
       {{ block.heading || context.title }}
     </h1>
     <p v-if="block.introduction" class="text-purple text-md leading-tighter max-w-[70ch] text-balance">

@@ -29,12 +29,16 @@ useHead({ title })
 
 <template>
   <main class="min-h-page">
-    <PageHeader :block="{
-      breadcrumbs: [
-        { post_name: 'events', post_title: 'Events' },
-      ],
-      heading: event.title
-    }" />
+    <PageHeader
+      :block="{
+        heading: event.title
+      }"
+      :context="{
+        breadcrumbs: [
+          { post_name: '/events', post_title: 'Events' },
+        ],
+      }"
+    />
     <article class="page-container grid md:grid-cols-3 gap-site md:gap-12">
       <div v-if="event.thumbnail?.url">
         <NuxtPicture

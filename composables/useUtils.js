@@ -50,6 +50,26 @@ export const useUtils = () => {
       } 
 
       return { type: 'category', ...post.categories[0] }
+    },
+
+    subpages: ({ id, menu }) => {
+      let currentPage
+      menu.forEach((page) => {
+        if (page.id === id) {
+          currentPage = page
+          return
+        }
+        const pageIndex = page.children.findIndex((p) => p.id === id)
+        if (pageIndex !== -1) {
+          currentPage = page.children[pageIndex]
+        }
+      })
+
+      if (currentPage) {
+        return currentPage.children
+      }
+
+      return menu
     }
   }
 }

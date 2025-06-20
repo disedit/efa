@@ -53,14 +53,20 @@ useHead({ title })
       />
     </div>
     <div class="bg-white relative z-1 page-container p-0">
-      <PageHeader :block="{
-        breadcrumbs: [
-          { post_name: 'news', post_title: 'News' },
-          { post_name: 'news/page/1/?tags=' + mainCategory.id, post_title: mainCategory.name, color: mainCategory.color || 'purple', hidden: mainCategory.name === 'News' },
-          { post_name: null, post_title: humanDate(post.date) }
-        ],
-        heading: post.title
-      }" class="md:!pt-12" />
+      <PageHeader
+        :block="{
+          heading: post.title,
+          headingViewTransitionName: `post-${post.id}-header`
+        }"
+        :context="{
+          breadcrumbs: [
+            { post_name: '/news', post_title: 'News' },
+            { post_name: '/news/page/1/?tags=' + mainCategory.id, post_title: mainCategory.name, color: mainCategory.color || 'purple', hidden: mainCategory.name === 'News' },
+            { post_name: null, post_title: humanDate(post.date) }
+          ],
+        }"
+        class="md:!pt-12"
+      />
       <article class="page-container grid md:grid-cols-[1fr_28rem] gap-site md:gap-18">
         <div>
           <NuxtPicture

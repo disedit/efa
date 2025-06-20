@@ -26,7 +26,17 @@
     padding-block: calc(var(--spacing-inner) / 2);
   }
 
+  .contained {
+    width: 100%;
+    max-width: var(--breakpoint-3xl);
+    margin-inline: auto;
+  }
+
   .bordered {
     border: var(--border-width) solid var(--color-primary);
+  }
+
+  .border-width {
+    border-width: var(--border-width);
   }
 }
