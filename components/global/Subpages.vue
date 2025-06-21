@@ -15,11 +15,11 @@ const children = subpages(props.context)
       'page-container': !block.compact
     }
   ]">
-    <li v-for="subpage in children" :key="subpage.id">
+    <li v-for="subpage in children" :key="subpage.id" class="flex flex-col">
       <NuxtLink
         :to="page(subpage.url)"
         :class="[
-          'flex bg-(--bg-color) text-(--text-color) hover:bg-(--bg-color-hover) p-site text-lg font-bold leading-[1.1]',
+          'flex items-end bg-(--bg-color) text-(--text-color) hover:bg-(--bg-color-hover) p-site text-lg font-bold leading-[1.1] w-full h-full',
           `color-${block.color}`,
           {
             'pt-42': !block.compact && !subpage.children,
@@ -30,7 +30,7 @@ const children = subpages(props.context)
       >
         {{ subpage.title }}
       </NuxtLink>
-      <div v-if="subpage.children">
+      <div v-if="subpage.children && subpage.children.length > 0">
         <ul class="flex flex-wrap gap-site mt-site">
           <li v-for="child in subpage.children" :key="child.id">
             <NuxtLink

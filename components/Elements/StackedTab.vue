@@ -13,12 +13,24 @@ defineEmits(['selected'])
     >
       <slot name="label" />
     </button>
-    <div class="tab-content bg-true-white bordered p-12 relative z-1 -translate-y-(--border-width) h-full -mb-(--border-width)">
+    <div class="tab-content bg-true-white bordered p-site md:p-12 relative z-1 -translate-y-(--border-width) h-full -mb-(--border-width)">
       <slot />
     </div>
   </article>
 </template>
 
 <style lang="scss" scoped>
+.tab-label {
+  position: relative;
 
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: calc(var(--border-width) * -1.5);
+    left: 0;
+    right: 0;
+    height: calc(var(--border-width) * 2);
+    background: var(--color-true-white);
+  }
+}
 </style>
