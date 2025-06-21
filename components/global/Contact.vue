@@ -1,12 +1,42 @@
 <script setup>
 defineProps({ block: Object })
 const settings = await useSettings()
+
+const submitting = ref(false)
+const submitted = ref(false)
+const error = ref(false)
+
 const form = reactive({
   name: '',
   email: '',
   organisation: '',
   message: '',
 })
+
+const submit = async () => {
+  if (submitting.value || submitted.value) return
+  submitting.value = true
+
+  try {
+    const formData = new FormData()
+    formData.append('name', form.name)
+    formData.append('organisation', form.city)
+    formData.append('email', form.email)
+    formData.append('message', form.message)
+    formData.append('company', form.company)
+
+    await fetch('https://services.disedit.com/api/efa/contact', {
+        method: 'post',
+        body: formData,
+    })
+
+    submitted.value = true
+  } catch(e) {
+    error.value = true
+  } finally {
+    submitting.value = false
+  }
+}
 </script>
 
 <template>
@@ -33,7 +63,7 @@ const form = reactive({
         <template #label>
           Contact Form
         </template>
-        <form class="">
+        <form v-if="!submitted" @submit.prevent="submit">
           <div class="divide-y-(--border-width)">
             <FormFloatInput
               name="name"
@@ -82,10 +112,17 @@ const form = reactive({
                 id="mc-embedded-subscribe"
                 value="Submit"
                 class="text-md"
+                :loading="submitting"
+                loading-value="Submitting..."
+                icon="ri:send-plane-fill"
               />
             </div>
           </div>
         </form>
+        <div v-else class="text-primary text-md p-site md:py-36 flex flex-col items-center justify-center gap-site font-medium leading-tight text-center text-balance">
+          <Icon name="ri:send-plane-fill" class="text-xl" />
+          <div v-html="block.message_after_submission" />
+        </div>
       </ElementsTab>
     </div>
   </section>
