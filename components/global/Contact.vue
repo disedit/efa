@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ block: Object })
+defineProps({ block: Object, context: Object })
 const settings = await useSettings()
 
 const submitting = ref(false)

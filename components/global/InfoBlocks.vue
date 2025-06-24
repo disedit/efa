@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ block: Object })
+defineProps({ block: Object, context: Object })
 
 const { $wp } = useNuxtApp()
 const { data: stats } = await useAsyncData(

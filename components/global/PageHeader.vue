@@ -7,7 +7,7 @@ const { page } = useUtils()
 
 <template>
   <header class="page-container pt-inner">
-    <nav v-if="!block.hide_breadcrumbs && context.breadcrumbs" aria-label="Breadcrumb" class="breadcrumb relative z-1 font-bold text-base">
+    <nav v-if="!block.hide_breadcrumbs && context && context.breadcrumbs" aria-label="Breadcrumb" class="breadcrumb relative z-1 font-bold text-base">
       <ol class="flex items-center">
         <template v-for="item in context.breadcrumbs" :key="item.ID || item.id" >
           <li v-if="!item.hidden" class="flex items-center text-purple">

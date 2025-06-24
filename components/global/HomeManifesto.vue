@@ -1,7 +1,5 @@
 <script setup>
-defineProps({
-  block: { type: Object, required: true }
-})
+defineProps({ block: Object, context: Object })
 
 const { $gsap, $ScrollTrigger, $emitter } = useNuxtApp()
 const { setDark, unsetDark } = useColorMode()
@@ -55,15 +53,6 @@ onMounted(() => {
         start: 'top 35%',
         end: 'top top'
       }
-
-      $gsap.fromTo('.home-scroller .for-all', {
-        y: '100%'
-      }, {
-        y: 0,
-        duration: .75,
-        ease: 'expo.out',
-        scrollTrigger
-      })
 
       $gsap.fromTo('.scroller-chapter .item-title', {
         y: '120%'

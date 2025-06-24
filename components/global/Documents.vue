@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ block: Object })
+defineProps({ block: Object, context: Object })
 const hasOneFile = (document) => {
   return document.files && document.files.length < 2
 }

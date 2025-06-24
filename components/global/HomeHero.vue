@@ -1,39 +1,51 @@
 <script setup>
-const props = defineProps({ block: Object })
+const props = defineProps({ block: Object, context: Object })
 const { $gsap, $ScrollTrigger } = useNuxtApp()
 const { link } = useUtils()
 const hero = ref(null)
 const imageLoaded = ref(false)
+const canAnimate = ref(false)
+const animated = ref(false) 
 
 watch(imageLoaded, (loaded) => {
-  if (loaded && props.block.animate) {
+  if (loaded && props.block.animate && canAnimate.value) {
     animate()
   }
 })
 
-function animate() {
-  if (props.block.animate) {
-    $gsap.to(hero.value, {
-      delay: .25,
-      duration: 2,
-      ease: 'power4.inOut',
-      minHeight: '77vh',
-      onComplete () {
-        $ScrollTrigger.refresh()
-      } 
-    })
+onMounted(() => {
+  setTimeout(() => {
+    canAnimate.value = true
 
-    $gsap.fromTo('.hero .word', {
-      opacity: 0,
-      y: '20%',
-    }, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      stagger: .1,
-      ease: 'power4.out',
-    })
-  }
+    if (props.block.animate && imageLoaded.value && !animated.value) {
+      animate()
+    }
+  }, 500)
+})
+
+function animate() {
+  animated.value = true
+
+  $gsap.to(hero.value, {
+    delay: .25,
+    duration: 2,
+    ease: 'power4.inOut',
+    minHeight: '77vh',
+    onComplete () {
+      $ScrollTrigger.refresh()
+    } 
+  })
+
+  $gsap.fromTo('.hero .word', {
+    opacity: 0,
+    y: '20%',
+  }, {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    stagger: .1,
+    ease: 'power4.out',
+  })
 }
 
 const bgColors = {
@@ -87,8 +99,8 @@ const tag = props.block.link?.url ? resolveComponent('NuxtLink') : 'div'
         {{ block.text }}
       </p>
 
-      <p v-if="block.cta">
-        <span class="inline-block text-base bg-white text-purple font-bold p-2 px-4 bordered">
+      <p v-if="block.cta" class="cta relative w-fit">
+        <span class="inline-block text-base bg-white text-purple font-bold p-2 px-4 bordered transition">
           {{ block.cta }}
         </span>
       </p>
@@ -110,5 +122,31 @@ const tag = props.block.link?.url ? resolveComponent('NuxtLink') : 'div'
 <style lang="scss" scoped>
 .animated .word {
   opacity: 0;
+}
+
+.cta {
+  &:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: var(--border-width) solid var(--color-primary);
+    background: var(--color-white);
+    z-index: -1;
+    transition: .25s ease;
+  }
+
+  &:hover span {
+    transform: translate(-.4rem, -.4rem);
+
+    &:after {
+      transform: translate(.4rem, .4rem);
+    }
+  }
+
+  &:active {
+    span {
+      transform: translate(-.2rem, -.2rem);
+    }
+  }
 }
 </style>

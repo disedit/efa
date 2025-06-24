@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({ block: Object })
+const props = defineProps({ block: Object, context: Object })
 
 const { $gsap } = useNuxtApp()
 const { setDark, unsetDark } = useColorMode()

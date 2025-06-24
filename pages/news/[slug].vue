@@ -52,7 +52,7 @@ useHead({ title })
         :img-attrs="{ class: 'w-full h-[calc(10rem+25vh)] object-cover' }"
       />
     </div>
-    <div class="bg-white relative z-1 page-container p-0">
+    <div class="bg-white relative z-1 contained p-0">
       <PageHeader
         :block="{
           heading: post.title,
@@ -67,7 +67,7 @@ useHead({ title })
         }"
         class="md:!pt-12"
       />
-      <article class="page-container grid md:grid-cols-[1fr_28rem] gap-site md:gap-18">
+      <article class="page-container grid lg:grid-cols-[1fr_28rem] gap-site md:gap-18">
         <div>
           <NuxtPicture
             v-if="post.thumbnail?.url && post.fields?.layout !== 'image_header'"

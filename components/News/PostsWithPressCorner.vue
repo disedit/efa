@@ -32,8 +32,8 @@ defineProps({
       :categories="categories"
       :tags="tags"
     />
-    <aside class="sticky top-navbar">
-      <NewsPressCorner />
+    <aside>
+      <NewsPressCorner class="sticky top-navbar" />
     </aside>
   </section>
 </template>

@@ -13,11 +13,11 @@ const props = defineProps({
     required: true
   },
   categories: {
-    type: String,
+    type: Array,
     default: null
   },
   tags: {
-    type: String,
+    type: Array,
     default: null
   }
 })
