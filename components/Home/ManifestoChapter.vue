@@ -111,13 +111,13 @@ function animateOut() {
   &-more {
     font-size: var(--text-md);
     text-decoration: underline;
-    text-decoration: underline;
     text-underline-offset: 0.2em;
     text-decoration-thickness: var(--border-width);
     margin-top: 1em;
     padding-left: .5em;
     position: relative;
     z-index: 10;
+    transition: .25s ease;
   }
   
   &-image {
@@ -142,6 +142,11 @@ function animateOut() {
 
     .item-image {
       opacity: 1;
+    }
+
+    .item-more {
+      font-weight: 800;
+      letter-spacing: -.04em;
     }
   }
 }

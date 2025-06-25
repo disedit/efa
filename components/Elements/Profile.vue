@@ -38,7 +38,7 @@ const socials = props.profile.links ? props.profile.links.map(({ platform, url: 
           class="group flex gap-2 items-center text-sm font-medium leading-[1]"
         >
           <span v-if="profile.member_party.acronym" class="bg-primary text-white py-1 px-2 font-bold whitespace-nowrap">{{ profile.member_party.acronym }}</span>
-          <span class="group-hover:bg-primary/15 group-hover:px-2 py-1 transition-all text-black group-hover:text-primary">{{ profile.member_party.name }}</span>
+          <span class="group-hover:bg-primary/15 group-hover:px-2 py-1 transition-all text-blackish group-hover:text-primary">{{ profile.member_party.name }}</span>
         </a>
       </div>
       <UtilsSocials

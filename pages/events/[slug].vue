@@ -80,7 +80,7 @@ useHead({ title })
             {{ event.fields.button_label || 'More details' }}
           </UtilsButton>
         </div>
-        <div v-html="event.content" class="text-base text-black prose max-w-[85ch]" />
+        <div v-html="event.content" class="text-base text-blackish prose max-w-[85ch]" />
       </div>
     </article>
   </main>

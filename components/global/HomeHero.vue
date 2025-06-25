@@ -5,7 +5,8 @@ const { link } = useUtils()
 const hero = ref(null)
 const imageLoaded = ref(false)
 const canAnimate = ref(false)
-const animated = ref(false) 
+const animated = ref(false)
+const hasVideo = computed(() => !!props.block.background_video)
 
 watch(imageLoaded, (loaded) => {
   if (loaded && props.block.animate && canAnimate.value) {
@@ -17,7 +18,7 @@ onMounted(() => {
   setTimeout(() => {
     canAnimate.value = true
 
-    if (props.block.animate && imageLoaded.value && !animated.value) {
+    if ((props.block.animate && imageLoaded.value && !animated.value) || hasVideo.value) {
       animate()
     }
   }, 500)
@@ -80,6 +81,9 @@ const tag = props.block.link?.url ? resolveComponent('NuxtLink') : 'div'
           'justify-start': block.position === 'top',
           'justify-center': block.position === 'center',
           'justify-end': block.position === 'end',
+          'items-start text-left': block.alignment === 'left',
+          'items-center text-center': block.alignment === 'center',
+          'items-end text-right': block.alignment === 'right',
         }
       ]">
       <h1 class="font-extrabold text-4xl selection-orange md:max-w-[50%] text-balance leading-[1]">
@@ -105,10 +109,19 @@ const tag = props.block.link?.url ? resolveComponent('NuxtLink') : 'div'
         </span>
       </p>
     </Component>
-    <div v-if="block.background?.url" class="absolute inset-0 z-[1] flex">
+    <div class="absolute inset-0 z-[1] flex">
+      <video
+        v-if="hasVideo"
+        :src="block.background_video"
+        class="w-full h-full object-cover"
+        muted
+        autoplay
+        loop
+      />
       <NuxtPicture
-        :src="block.background.url"
-        :alt="block.background.alt"
+        v-else-if="block.background_image?.url"
+        :src="block.background_image.url"
+        :alt="block.background_image.alt"
         sizes="100vw md:600px lg:800px xxl:1300px"
         preload
         @load="imageLoaded = true"
@@ -116,6 +129,7 @@ const tag = props.block.link?.url ? resolveComponent('NuxtLink') : 'div'
         class="w-full"
       />
     </div>
+    <div v-if="block.overlay" class="absolute inset-0 z-[2] bg-black/40"></div>
   </header>
 </template>
 

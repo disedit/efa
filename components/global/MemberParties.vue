@@ -165,7 +165,7 @@ function openArea (area) {
 
     &-name {
       transition: .25s ease;
-      color: var(--color-black);
+      color: var(--color-blackish);
     }
 
     &:hover,

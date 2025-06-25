@@ -16,7 +16,7 @@ onMounted(() => {
   <section class="page-container">
     <ElementsTabbedPages
       :menu="context.menu"
-      :disable-top-level="true"
+      :disable-top-level="block.disable_top_level"
     >
       <UtilsBlocks
         v-if="block.content"

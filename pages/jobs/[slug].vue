@@ -78,7 +78,7 @@ useHead({ title })
           </div>
         </div>
 
-        <div v-html="job.content" class="text-base text-black prose" :style="{'--color-th-background': 'var(--color-cream)', '--color-th-foreground': 'var(--color-primary)' }" />
+        <div v-html="job.content" class="text-base text-blackish prose" :style="{'--color-th-background': 'var(--color-cream)', '--color-th-foreground': 'var(--color-primary)' }" />
 
         <div class="mt-6" v-if="canApply">
           <UtilsButton
