@@ -137,4 +137,17 @@ onUnmounted(() => {
       width: 25vw;
     }
   }
+
+  @media(max-width: 991px) {
+    .home-scroller {
+      margin-top: 0;
+      
+
+      .items {
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        min-height: calc(100vh - var(--spacing-navbar));
+      }
+    }
+  }
 </style>

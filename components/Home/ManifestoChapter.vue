@@ -75,12 +75,17 @@ function animateOut() {
 <style lang="scss" scoped>
 .item {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   flex-shrink: 0;
   color: var(--color-white);
   text-decoration: none;
   margin: 7vw 0;
   padding: 0 7vw;
   transition: .25s ease;
+  scroll-snap-align: center;
+  max-width: 100vw;
 
   &-title {
     font-size: var(--text-5xl);
@@ -93,6 +98,7 @@ function animateOut() {
     position: relative;
     z-index: 10;
     margin-right: 5vw;
+    hyphens: auto;
   }
 
   &-text {
@@ -147,6 +153,24 @@ function animateOut() {
     .item-more {
       font-weight: 800;
       letter-spacing: -.04em;
+    }
+  }
+}
+
+@media(max-width: 991px) {
+  .item {
+    &-image {
+      top: 2vh;
+      right: 4vw;
+      left: 20vw;
+      z-index: 1;
+      opacity: .5;
+      transition: .25s ease;
+
+      :deep(img) {
+        height: 27vh;
+        object-fit: cover;
+      }
     }
   }
 }
