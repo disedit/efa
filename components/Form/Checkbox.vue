@@ -13,8 +13,8 @@
   margin: 0;
   font: inherit;
   color: currentColor;
-  width: 1.25em;
-  height: 1.25em;
+  width: 1.5em;
+  height: 1.5em;
   border: var(--border-width) solid var(--color-primary);
   border-radius: 0;
   display: grid;
@@ -40,4 +40,10 @@
   }
 }
 
+@media (max-width: 46rem) {
+  .checkbox-input {
+    width: 2em;
+    height: 2em;
+  }
+}
 </style>

@@ -30,7 +30,7 @@
         required
       />
 
-      <label class="flex text-sm gap-2">
+      <label class="flex items-center text-sm gap-2">
         <FormCheckbox
           name="MMERGE3"
           value="I have read and agree to the Terms and Conditions."

@@ -53,6 +53,7 @@
 @media (max-width: 46rem) {
   :root {
     --spacing-inner: var(--spacing-site);
+    --text-base: 1rem;
   }
 }
 

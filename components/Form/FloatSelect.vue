@@ -8,9 +8,9 @@ defineProps({
     type: String,
     required: true
   },
-  type: {
-    type: String,
-    default: 'text',
+  options: {
+    type: Array,
+    required: true,
   },
   required: {
     type: Boolean,
@@ -30,34 +30,25 @@ const floating = computed(() => {
 </script>
 
 <template>
-  <div :class="['field relative', `type-${type}`, { floating }, wrapperClass]">
+  <div :class="['field relative', { floating }, wrapperClass]">
     <label :for="name" class="label flex justify-between w-full items-center px-3 md:px-4">
       {{ label }}
       <span v-if="!required" class="text-xs opacity-60">Optional</span>
     </label>
-    <textarea
-      v-if="type === 'textarea'"
+    <select
       :id="name"
       :name="name"
       v-model="modelValue"
       v-bind="$attrs"
       :required="required"
-      class="w-full focus:outline-none px-3 md:px-4 pt-6 md:pt-8 pb-2 md:pb-3 text-base font-medium field-sizing-content min-h-[20rem]"
+      class="w-full px-2 md:px-3 pt-6 md:pt-8 pb-2 md:pb-3 text-base font-medium"
       @focus="focused = true"
       @blur="focused = false"
-    />
-    <input
-      v-else
-      :type="type"
-      :id="name"
-      :name="name"
-      v-model="modelValue"
-      v-bind="$attrs"
-      :required="required"
-      class="w-full focus:outline-none px-3 md:px-4 pt-6 md:pt-8 pb-2 md:pb-3 text-base font-medium"
-      @focus="focused = true"
-      @blur="focused = false"
-    />
+    >
+      <option v-for="(option, index) in options" :key="index" :value="option.value">
+        {{ option.label }}
+      </option>
+    </select>
   </div>
 </template>
 
@@ -70,13 +61,6 @@ const floating = computed(() => {
   font-size: var(--text-base);
   font-weight: 500;
   transition: 0.15s ease-in-out;
-}
-
-.type-textarea {
-  .label {
-    top: 1rem;
-    transform: translateY(0);
-  }
 }
 
 .floating {

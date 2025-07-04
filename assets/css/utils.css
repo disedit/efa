@@ -36,6 +36,14 @@
     border: var(--border-width) solid var(--color-primary);
   }
 
+  .bordered-b {
+    border-bottom: var(--border-width) solid var(--color-primary);
+  }
+
+  .bordered-l {
+    border-left: var(--border-width) solid var(--color-primary);
+  }
+
   .border-width {
     border-width: var(--border-width);
   }

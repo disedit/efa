@@ -27,8 +27,8 @@ defineProps({
       <div :class="[
         'tab-flap flex items-center gap-2 bg-true-white w-fit bordered border-b-0 text-primary font-bold tracking-tight',
         {
-          'py-2 px-site': labelSize === 'md',
-          'py-1 px-site': labelSize === 'base',
+          'py-2 px-4': labelSize === 'md',
+          'py-1 px-3 md:px-4': labelSize === 'base',
         }
       ]">
         <slot name="label" />
