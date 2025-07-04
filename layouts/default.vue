@@ -13,10 +13,28 @@ useHead({
     { rel: 'manifest', href: '/favicons/site.webmanifest' }
   ]
 })
+
+const config = useRuntimeConfig()
+
+onMounted(() => {
+  window.PushEngage = window.PushEngage || []
+  window._peq = window._peq || []
+  window.PushEngage.push(['init', {
+      appId: config.public.pushEngage
+  }])
+
+  const e = document.createElement('script')
+
+  e.src = 'https://clientcdn.pushengage.com/sdks/pushengage-web-sdk.js'
+  e.async = true
+  e.type = 'text/javascript'
+  document.head.appendChild(e)
+})
 </script>
 
 <template>
   <div>
+    <NuxtRouteAnnouncer />
     <NuxtLoadingIndicator :color="false" />
     <SiteNav />
     <slot />

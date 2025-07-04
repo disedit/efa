@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     public: {
       wpApiEndpoint: 'https://content.efaparty.eu/wp-json',
       contentUrl: 'https://content.efaparty.eu',
-      baseUrl: 'https://efaparty.eu'
+      baseUrl: 'https://efaparty.eu',
+      pushEngage: 'c96400d08fa8308ff3fbcc11225c4705'
     }
   },
 
@@ -30,7 +31,7 @@ export default defineNuxtConfig({
 
   image: process.env.NUXT_PUBLIC_NODE_ENV === 'production' ? {
     provider: 'netlify',
-    domains: ['pmf.disedit.com']
+    domains: ['content.efaparty.eu']
   } : {
     provider: 'ipx'
   }
