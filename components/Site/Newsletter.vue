@@ -13,15 +13,24 @@
     <p class="text-base">Join our newsletter</p>
 
     <div class="flex flex-col gap-site mt-4 mt:my-6">
-      <div class="flex">
+      <div class="flex gap-site">
+        <label for="mce-FNAME" class="sr-only">First Name </label>
+        <FormInput
+          id="mce-FNAME"
+          type="text"
+          name="FNAME"
+          placeholder="First Name"
+        />
+
         <label for="newsletter_email" class="sr-only">Your e-mail</label>
         <FormInput
           id="newsletter_email"
           type="email"
           name="EMAIL"
-          placeholder="Email"
+          placeholder="Email *"
           required
         />
+
         <FormButton
           type="submit"
           name="subscribe"
