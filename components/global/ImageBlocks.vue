@@ -11,14 +11,28 @@ defineProps({ block: Object, context: Object })
       target="_blank"
       class="card"
     >
-      <div class="sr-only">{{ card.label }}</div>
       <NuxtImg
         v-if="card.image"
         :src="card.image"
+        :alt="card.label"
         class="card-image w-full bordered"
       />
-      <div class="card-shadow shadow-1 bordered bg-true-white" />
-      <div class="card-shadow shadow-2 bordered bg-true-white" />
+      <div class="card-shadow shadow-1 bordered bg-white overflow-clip" aria-hidden="true">
+        <NuxtImg
+          v-if="card.image"
+          :src="card.image"
+          alt=""
+          class="w-full"
+        />
+      </div>
+      <div class="card-shadow shadow-2 bordered bg-white overflow-clip" aria-hidden="true">
+        <NuxtImg
+          v-if="card.image"
+          :src="card.image"
+          alt=""
+          class="w-full"
+        />
+      </div>
     </a>
   </section>
 </template>
@@ -30,9 +44,6 @@ defineProps({ block: Object, context: Object })
 
   &-image {
     aspect-ratio: 1.91;
-  }
-
-  &-image {
     position: relative;
     z-index: 10;
     transition: .25s ease;
@@ -72,10 +83,20 @@ defineProps({ block: Object, context: Object })
     z-index: 1;
     opacity: 0;
     transition: .25s ease;
+    overflow: clip;
+
+    img {
+      aspect-ratio: 1.91;
+      opacity: .25;
+    }
   }
 
   .shadow-2 {
     z-index: 2;
+
+    img {
+      opacity: .5;
+    }
   }
 }
 </style>
