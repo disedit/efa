@@ -107,7 +107,7 @@ function openArea (area) {
       </template>
     </div>
     <div class="hidden md:block">
-      <div v-html="block.svg" class="map sticky top-navbar flex justify-end" />
+      <div v-html="block.svg" class="map sticky top-0 flex justify-end" />
     </div>
   </section>
   <UtilsModal

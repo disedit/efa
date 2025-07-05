@@ -16,7 +16,7 @@ const postCategory = category(props.post)
     :to="`/news/${post.slug}`"
     class="flex"
   >
-    <ElementsTab rises label-size="base">
+    <ElementsTab rises label-size="base" class="w-full">
       <template #label>
         <NewsCategory :category="postCategory" />
       </template>

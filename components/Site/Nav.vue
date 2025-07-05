@@ -1,6 +1,28 @@
 <script setup>
+import { breakpointsTailwind } from '@vueuse/core'
 const settings = await useSettings()
 const { link } = useUtils()
+const route = useRoute()
+
+/* Hide/Show nav bar on scorll */
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const isMobile = breakpoints.smaller('xl')
+const { y } = useWindowScroll()
+const showNavbar = ref(true)
+const lastScrollPosition = ref(0)
+
+watch(y, (currentScrollPosition) => {
+  if (currentScrollPosition < 0 || Math.abs(currentScrollPosition - lastScrollPosition.value) < 60) {
+    return
+  }
+  showNavbar.value = currentScrollPosition < lastScrollPosition.value
+  lastScrollPosition.value = currentScrollPosition
+})
+
+const navCanHide = computed(() => {
+  console.log(route.path, !isMobile.value && !route.path.startsWith('/events') && !route.path !== '/')
+  return !isMobile.value && !route.path.startsWith('/events') && route.path !== '/'
+})
 
 /* Mobile menu */
 const { setMenuOpen, unsetMenuOpen } = useColorMode()
@@ -26,7 +48,10 @@ function toggleMenu () {
 
 <template>
   <nav
-    class="nav fixed flex bg-white top-0 left-0 right-0 px-site py-site xl:py-2 justify-between items-center gap-site transition h-navbar z-[5000]"
+    :class="[
+      'nav fixed flex bg-white top-0 left-0 right-0 px-site py-site xl:py-2 justify-between items-center gap-site transition duration-[.5s] ease-out h-navbar z-[5000]',
+      { '-translate-y-[100%]': !showNavbar && navCanHide }
+    ]"
   >
     <NuxtLink to="/" class="logo text-primary" aria-label="European Free Alliance">
       <LogoEFA class="h-[2rem]" />
@@ -37,7 +62,7 @@ function toggleMenu () {
       <UtilsButton
         v-if="settings.menu_cta"
         :to="link(settings.menu_cta.link)"
-        class="text-base"
+        class="text-base hover:bg-secondary"
       >
         {{ settings.menu_cta.link?.title }}
       </UtilsButton>

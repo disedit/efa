@@ -10,7 +10,7 @@ defineProps({
 <template>
   <button
     v-bind="$attrs"
-    class="flex gap-2 items-center bg-primary font-bold text-white py-[.25em] px-[.75em] transition-all cursor-pointer text-base"
+    class="flex gap-2 items-center bg-primary hover:bg-secondary font-bold text-white py-[.25em] px-[.75em] transition-all cursor-pointer text-base"
   >
     <Icon v-if="icon && !loading" :name="icon" />
     <Icon v-else-if="loading" name="eos-icons:loading" />
