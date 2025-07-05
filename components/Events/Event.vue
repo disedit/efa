@@ -8,7 +8,7 @@ const { humanDate, time } = useDate()
 
 <template>
   <article class="event gap-site md:gap-x-12 text-primary text-base border-b-2 pb-10 mb-2 md:pb-0 md:mb-0 md:border-0">
-    <time :datetime="event.fields.date" class="event-date text-lg font-medium leading-none">
+    <time :datetime="event.fields.date" class="event-date text-md md:text-lg font-medium leading-none">
       <div class="sticky flex md:flex-col gap-3 justify-between">
         <div>
           {{ event.fields.has_manual_date ? event.fields.manual_date : humanDate(event.fields.date, 'short') }}
@@ -36,8 +36,7 @@ const { humanDate, time } = useDate()
         {{ event.title }}
       </h3>
     </NuxtLink>
-    <div class="event-info flex flex-col gap-site">
-
+    <div class="event-info flex flex-col gap-site text-md md:text-base font-medium">
       <address class="not-italic">
         <strong class="block">
           {{ event.fields.city_region }}
@@ -67,6 +66,10 @@ const { humanDate, time } = useDate()
   grid-template-areas:
     "date picture title"
     "date picture info";
+
+  &:last-child {
+    border-bottom: 0;
+  }
 
   &-date {
     grid-area: date;

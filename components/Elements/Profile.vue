@@ -117,4 +117,10 @@ const socials = props.profile.links ? props.profile.links.map(({ platform, url: 
     z-index: 2;
   }
 }
+
+@media (max-width: 46rem) {
+  .profile-card {
+    --shift-by: .5rem;
+  }
+}
 </style>

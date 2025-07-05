@@ -16,7 +16,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="flex items-center justify-between gap-site text-md mt-20">
+  <div class="flex items-center justify-between gap-site text-md mt-4 md:mt-20 mb-20">
     <NuxtLink
       v-if="page > 1"
       :to="page > 2 ? `/events/page/${page - 1}` : '/events'"

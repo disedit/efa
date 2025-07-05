@@ -41,7 +41,7 @@ const floating = computed(() => {
       v-model="modelValue"
       v-bind="$attrs"
       :required="required"
-      class="w-full px-2 md:px-3 pt-6 md:pt-8 pb-2 md:pb-3 text-base font-medium"
+      class="appearance-none w-full px-3 md:px-4 pt-6 md:pt-8 pb-2 md:pb-3 text-md md:text-base font-medium"
       @focus="focused = true"
       @blur="focused = false"
     >

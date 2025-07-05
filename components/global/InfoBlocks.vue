@@ -35,7 +35,7 @@ onMounted(() => {
       :key="i"
       :class="['card basis-full md:basis-[30%]', `color-${card.color}`]"
     >
-      <span class="counter font-medium text-3xl text-(--text-color-secondary) leading-none">
+      <span class="counter font-medium text-5xl md:text-3xl text-(--text-color-secondary) leading-none">
         {{ card.dynamic ? stats[card.dynamic] : card.number }}
       </span>
       <span class="mt-auto text-balance leading-none">

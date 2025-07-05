@@ -54,6 +54,7 @@
         name="subscribe"
         id="mc-embedded-subscribe"
         value="Subscribe"
+        class="text-md md:text-base"
       />
     </div>
   </form>

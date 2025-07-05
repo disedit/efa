@@ -64,7 +64,7 @@ watch(otherAmount, (newValue) => {
             min="5"
             placeholder="5"
             v-model="otherAmount"
-            class="focus:outline-0 field-sizing-content min-w-[3ch] p-0 leading-none selection-orange border-b-2 border-purple/50 focus:border-white/50"
+            class="focus:outline-0 field-sizing-content min-w-[3ch] max-w-[5ch] p-0 leading-none selection-orange border-b-2 border-purple/50 focus:border-white/50"
           />
           &euro;
         </div>

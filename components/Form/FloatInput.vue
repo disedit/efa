@@ -42,7 +42,7 @@ const floating = computed(() => {
       v-model="modelValue"
       v-bind="$attrs"
       :required="required"
-      class="w-full focus:outline-none px-3 md:px-4 pt-6 md:pt-8 pb-2 md:pb-3 text-base font-medium field-sizing-content min-h-[20rem]"
+      class="input w-full focus:outline-none px-3 md:px-4 pt-6 md:pt-8 pb-2 md:pb-3 text-md md:text-base font-medium field-sizing-content min-h-[20rem]"
       @focus="focused = true"
       @blur="focused = false"
     />
@@ -54,7 +54,7 @@ const floating = computed(() => {
       v-model="modelValue"
       v-bind="$attrs"
       :required="required"
-      class="w-full focus:outline-none px-3 md:px-4 pt-6 md:pt-8 pb-2 md:pb-3 text-base font-medium"
+      class="w-full focus:outline-none px-3 md:px-4 pt-6 md:pt-8 pb-2 md:pb-3 text-md md:text-base font-medium"
       @focus="focused = true"
       @blur="focused = false"
     />

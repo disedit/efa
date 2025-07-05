@@ -13,7 +13,7 @@ defineProps({
     :class="[
       'bg-true-white bordered w-full py-[.25em] px-[.5em] focus:outline-none',
       {
-        'text-base': size === 'base',
+        'text-md md:text-base': size === 'base',
       }
     ]"
   />
