@@ -13,7 +13,7 @@
     <p class="text-base">Join our newsletter</p>
 
     <div class="flex flex-col gap-site mt-4 mt:my-6">
-      <div class="flex gap-site">
+      <div class="flex flex-col md:flex-row gap-site">
         <label for="mce-FNAME" class="sr-only">First Name </label>
         <FormInput
           id="mce-FNAME"

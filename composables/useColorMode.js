@@ -17,12 +17,10 @@ export const useColorMode = () => {
 
   const setMenuOpen = () => {
     document.documentElement.classList.add('overflow-hidden')
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', colors.primary)
   }
 
   const unsetMenuOpen = () => {
     document.documentElement.classList.remove('overflow-hidden')
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', colors.default)
   }
 
   return {

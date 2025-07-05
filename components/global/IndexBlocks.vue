@@ -7,7 +7,7 @@ const { page } = useUtils()
 <template>
   <section
     :class="[
-      'page-container grid gap-site',
+      'page-container grid gap-site md:gap-8',
       {
         compact: block.compact,
         'md:grid-cols-2': block.max_columns == 2,
@@ -28,7 +28,6 @@ const { page } = useUtils()
 
 <style scoped>
 .card {
-  --card-padding: 2rem;
   display: flex;
   position: relative;
   background-color: var(--bg-color);
@@ -38,8 +37,10 @@ const { page } = useUtils()
   font-weight: 800;
   min-height: 8em;
   align-items: flex-end;
+}
 
-  &:hover {
+@media not all and (hover: none) {
+  .card:hover {
     background-color: var(--bg-color-hover);
     color: var(--text-color-hover);
 
@@ -59,5 +60,12 @@ const { page } = useUtils()
 
 .compact .card {
   min-height: 4em;
+}
+
+@media (max-width: 46rem) {
+  .card {
+    font-size: var(--text-xl);
+    min-height: 6em;
+  }
 }
 </style>

@@ -2,7 +2,7 @@
 useHead({
   htmlAttrs: { lang: 'en', class: 'bg-white' },
   meta: [
-    { name: 'theme-color', content: '#773E90' },
+    { name: 'theme-color', content: '#FAF5F2' },
     { name: 'apple-mobile-web-app-title', content: 'EFA' }
   ],
   link: [

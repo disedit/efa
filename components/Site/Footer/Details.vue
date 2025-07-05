@@ -6,7 +6,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex flex-col gap-10">
+  <div class="flex flex-col gap-6 md:gap-10">
     <div>
       <LogoForAll class="h-[9rem]" />
     </div>

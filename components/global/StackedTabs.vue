@@ -133,6 +133,14 @@ const selectTab = (index) => {
     --tab-height: 28rem;
 
     &.stacked {
+      padding: var(--spacing-site);
+      
+      .tab-label:hover,
+      .tab.selected .tab-label {
+        padding-bottom: calc(var(--spacing) * 2);
+        margin-top: 0;
+      }
+
       .tab:not(:first-child) {
         margin-top: calc(var(--tab-height) * -0.93);
       }

@@ -117,6 +117,7 @@ const tag = props.block.link?.url ? resolveComponent('NuxtLink') : 'div'
         muted
         autoplay
         loop
+        playsinline
       />
       <NuxtPicture
         v-else-if="block.background_image?.url"

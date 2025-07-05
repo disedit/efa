@@ -34,6 +34,7 @@
   --leading-tighter: 1.1;
   --breakpoint-3xl: 120rem;
   --border-width: 2.5px;
+  --card-padding: 2rem;
   --color-lime-*: initial;
   --color-red-*: initial;
   --color-amber-*: initial;
@@ -54,6 +55,7 @@
   :root {
     --spacing-inner: var(--spacing-site);
     --text-base: 1rem;
+    --card-padding: 1.5rem;
   }
 }
 
