@@ -20,8 +20,7 @@ watch(y, (currentScrollPosition) => {
 })
 
 const navCanHide = computed(() => {
-  console.log(route.path, !isMobile.value && !route.path.startsWith('/events') && !route.path !== '/')
-  return !isMobile.value && !route.path.startsWith('/events') && route.path !== '/'
+  return !isMobile.value && !route.path.startsWith('/events') && !route.path.startsWith('/what-we-stand-for/history') && route.path !== '/'
 })
 
 /* Mobile menu */

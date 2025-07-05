@@ -161,7 +161,7 @@ function animateOut() {
 @media(max-width: 991px) {
   .item {
     justify-content: flex-end;
-    padding-bottom: 10vh;
+    padding-bottom: 20vh;
 
     &-title {
       color: var(--color-secondary);

@@ -38,7 +38,6 @@ const submit = async () => {
         body: formData,
     })
     const data = await response.json()
-    console.log('Sent', data, response)
 
     if (data.status === 'success') {
       window.location = data.payload?._links?.checkout?.href

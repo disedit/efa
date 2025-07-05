@@ -26,14 +26,14 @@ const postCategory = category(props.post)
         sizes="100vw md:1200px"
       />
       <div class="flex flex-col gap-site">
-        <div class="flex gap-site items-center justify-between text-sm font-medium">
+        <div class="flex gap-site items-center justify-between text-base md:text-sm font-medium">
           <NewsCategory :category="postCategory" />
           {{ humanDate(post.date) }}
         </div>
-        <h2 class="font-extrabold leading-[1] group-hover:underline text-lg">
+        <h2 class="font-extrabold leading-[1] group-hover:underline text-xl md:text-lg">
           {{ post.title }}
         </h2>
-        <div class="text-sm mt-auto" v-html="post.excerpt" />
+        <div class="text-base md:text-sm mt-auto" v-html="post.excerpt" />
       </div>
     </NuxtLink>
   </article>

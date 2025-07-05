@@ -129,4 +129,10 @@ defineProps({
     }
   }
 }
+
+@media (max-width: 46rem) {
+  .tab {
+    --shift-by: .75rem;
+  }
+}
 </style>

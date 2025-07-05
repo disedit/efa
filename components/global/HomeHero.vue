@@ -31,7 +31,7 @@ function animate() {
     delay: .25,
     duration: 2,
     ease: 'power4.inOut',
-    minHeight: '77vh',
+    minHeight: '77svh',
     onComplete () {
       $ScrollTrigger.refresh()
     } 

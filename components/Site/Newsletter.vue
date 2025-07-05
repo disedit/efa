@@ -36,6 +36,7 @@
           name="subscribe"
           id="mc-embedded-subscribe"
           value="Subscribe"
+          class="self-start md:self-auto text-md md:text-base"
         />
       </div>
 
