@@ -46,6 +46,7 @@ useHead({ title })
           :alt="event.thumbnail.alt"
           :img-attrs="{ class: 'w-full' }"
           class="sticky top-navbar"
+          sizes="100vw md:1200px"
         />
       </div>
       <div :class="['flex flex-col gap-8 text-primary', { 'md:col-span-2' : event.thumbnail?.url }]">

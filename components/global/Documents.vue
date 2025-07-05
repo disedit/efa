@@ -22,6 +22,7 @@ const hasOneFile = (document) => {
             v-if="document.cover"
             :src="document.cover"
             :alt="`Cover for ${document.title}`"
+            sizes="800px"
           />
           <Icon
             v-else

@@ -141,7 +141,6 @@ onUnmounted(() => {
   @media(max-width: 991px) {
     .home-scroller {
       margin-top: 0;
-      
 
       .items {
         overflow: auto;

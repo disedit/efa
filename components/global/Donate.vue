@@ -213,6 +213,7 @@ async function setCurrentCountry() {
         v-if="block.image"
         :src="block.image"
         class="w-full h-full object-cover"
+        sizes="100vw md:800px"
       />
     </div>
   </section>

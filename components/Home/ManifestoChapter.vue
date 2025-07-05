@@ -68,6 +68,7 @@ function animateOut() {
       :src="chapter.picture.url"
       :alt="chapter.picture.alt"
       class="item-image"
+      sizes="100vw md:1000px"
     />
   </nuxt-link>
 </template>

@@ -50,6 +50,7 @@ useHead({ title })
         :src="post.thumbnail.url"
         :alt="post.thumbnail.alt"
         :img-attrs="{ class: 'w-full h-[calc(10rem+25vh)] object-cover' }"
+        sizes="100vw md:2000px"
       />
     </div>
     <div class="bg-white relative z-1 contained p-0">
@@ -74,6 +75,7 @@ useHead({ title })
             :src="post.thumbnail.url"
             :alt="post.thumbnail.alt"
             :img-attrs="{ class: 'w-full mb-6' }"
+            sizes="100vw md:1600px"
           />
 
           <div v-html="post.content" class="text-base text-blackish prose max-w-[85ch]" />

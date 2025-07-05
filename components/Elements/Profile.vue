@@ -22,6 +22,7 @@ const socials = props.profile.links ? props.profile.links.map(({ platform, url: 
           :src="profile.picture"
           :alt="profile.name"
           class="profile-picture-img"
+          sizes="800px"
         />
       </div>
       <div class="flex flex-col gap-1">

@@ -23,6 +23,7 @@ const postCategory = category(props.post)
         :alt="post.thumbnail.alt"
         :img-attrs="{ class: 'aspect-[16/7] md:aspect-square w-full md:w-[20rem] object-cover' }"
         class="shrink-0"
+        sizes="100vw md:1200px"
       />
       <div class="flex flex-col gap-site">
         <div class="flex gap-site items-center justify-between text-sm font-medium">

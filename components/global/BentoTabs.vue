@@ -21,6 +21,7 @@ defineProps({ block: Object })
           <NuxtImg
             :src="tab.picture"
             alt=""
+            sizes="800px"
           />
         </div>
         <div v-html="tab.content" class="prose" />

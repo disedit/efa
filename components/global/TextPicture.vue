@@ -10,6 +10,7 @@ defineProps({ block: Object, context: Object })
         :src="block.picture.url"
         :alt="block.picture.alt"
         :img-attrs="{ class: 'w-full h-full object-cover' }"
+        sizes="100vw md:1200px"
       />
       <figcaption v-if="block.picture.caption">
         {{ block.picture.caption }}

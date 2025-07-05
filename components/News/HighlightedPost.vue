@@ -29,6 +29,7 @@ const postCategory = category(props.post)
           :src="post.thumbnail.url"
           :alt="post.thumbnail.alt"
           :img-attrs="{ class: 'aspect-[16/7] w-full object-cover' }"
+          sizes="100vw md:1200px"
         />
         <h2
           :class="[

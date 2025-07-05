@@ -25,7 +25,7 @@ const { humanDate, time } = useDate()
         :alt="event.thumbnail.title"
         class="block w-full border-2 border-primary"
         :img-attrs="{ class: 'w-full' }"
-        sizes="500px"
+        sizes="800px"
       />
     </div>
     <NuxtLink 

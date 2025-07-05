@@ -16,6 +16,7 @@ defineProps({ block: Object, context: Object })
         :src="card.image"
         :alt="card.label"
         class="card-image w-full bordered"
+        sizes="1600px"
       />
       <div class="card-shadow shadow-1 bordered bg-white overflow-clip" aria-hidden="true">
         <NuxtImg
@@ -23,6 +24,7 @@ defineProps({ block: Object, context: Object })
           :src="card.image"
           alt=""
           class="w-full"
+          sizes="1600px"
         />
       </div>
       <div class="card-shadow shadow-2 bordered bg-white overflow-clip" aria-hidden="true">
@@ -31,6 +33,7 @@ defineProps({ block: Object, context: Object })
           :src="card.image"
           alt=""
           class="w-full"
+          sizes="1600px"
         />
       </div>
     </a>
