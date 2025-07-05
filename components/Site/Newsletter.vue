@@ -7,7 +7,7 @@
     name="mc-embedded-subscribe-form"
     target="_self"
   >
-    <h3 class="newsletter-title font-extrabold text-lg leading-[1]">
+    <h3 class="newsletter-title font-extrabold text-lg leading-none">
       Become an insider
     </h3>
     <p class="text-base">Join our newsletter</p>

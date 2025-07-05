@@ -30,7 +30,7 @@ const postCategory = category(props.post)
           <NewsCategory :category="postCategory" />
           {{ humanDate(post.date) }}
         </div>
-        <h2 class="font-extrabold leading-[1] group-hover:underline text-xl md:text-lg">
+        <h2 class="font-extrabold leading-none group-hover:underline text-xl md:text-lg">
           {{ post.title }}
         </h2>
         <div class="text-base md:text-sm mt-auto" v-html="post.excerpt" />

@@ -39,7 +39,7 @@ useHead({ title })
     <article class="page-container grid gap-site md:gap-12">
       <ElementsTab class="max-w-[75rem]">
         <template #label>
-          <div class="leading-[1] py-2">{{ job.fields.type }}</div>
+          <div class="leading-none py-2">{{ job.fields.type }}</div>
         </template>
         <template #extra>
           <span class="hidden md:flex text-base text-primary gap-6 items-center leading-tight">

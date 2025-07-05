@@ -50,7 +50,7 @@ useHead({ title })
         />
       </div>
       <div :class="['flex flex-col gap-8 text-primary', { 'md:col-span-2' : event.thumbnail?.url }]">
-        <time :datetime="event.fields.date" class="flex gap-12 text-lg font-medium leading-[1]">
+        <time :datetime="event.fields.date" class="flex gap-12 text-lg font-medium leading-none">
           <div class="flex gap-2 items-center">
             <Icon name="ri:calendar-line" />
             {{ !event.fields.has_manual_date ? humanDate(event.fields.date) : event.fields.manual_date }}
@@ -60,7 +60,7 @@ useHead({ title })
             {{ !event.fields.has_manual_date ? time(event.fields.date) : event.fields.manual_time }}
           </div>
         </time>
-        <address v-if="event.fields.city_region || event.fields.venue || event.fields.addres" class="not-italic flex gap-2 text-lg leading-[1]">
+        <address v-if="event.fields.city_region || event.fields.venue || event.fields.addres" class="not-italic flex gap-2 text-lg leading-none">
           <Icon name="ri:map-pin-2-line" />
           <div>
             <strong class="block mb-2">{{ event.fields.city_region }}</strong>
@@ -68,7 +68,7 @@ useHead({ title })
             <div class="text-md">{{ event.fields.address }}</div>
           </div>
         </address>
-        <div v-if="event.fields.details" class="flex gap-2 text-lg leading-[1]">
+        <div v-if="event.fields.details" class="flex gap-2 text-lg leading-none">
           <Icon name="ri:information-2-line" />
           <div v-html="event.fields.details" class="text-md" />
         </div>

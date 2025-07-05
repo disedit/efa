@@ -23,7 +23,7 @@ defineProps({
         :img-attrs="{ class: 'aspect-square w-[4rem] object-cover' }"
         class="shrink-0"
       />
-      <span class="font-bold text-base leading-[1]">{{ post.title }}</span>
+      <span class="font-bold text-base leading-none">{{ post.title }}</span>
     </NuxtLink>
   </div>
 </template>

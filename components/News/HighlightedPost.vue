@@ -33,7 +33,7 @@ const postCategory = category(props.post)
         />
         <h2
           :class="[
-            'font-extrabold leading-[1]',
+            'font-extrabold leading-none',
             { 'text-lg': !!post.thumbnail?.url, 'text-2xl': !post.thumbnail?.url }
           ]"
         >

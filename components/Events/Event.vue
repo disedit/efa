@@ -8,7 +8,7 @@ const { humanDate, time } = useDate()
 
 <template>
   <article class="event gap-site md:gap-x-12 text-primary text-base border-b-2 pb-10 mb-2 md:pb-0 md:mb-0 md:border-0">
-    <time :datetime="event.fields.date" class="event-date text-lg font-medium leading-[1]">
+    <time :datetime="event.fields.date" class="event-date text-lg font-medium leading-none">
       <div class="sticky flex md:flex-col gap-3 justify-between">
         <div>
           {{ event.fields.has_manual_date ? event.fields.manual_date : humanDate(event.fields.date, 'short') }}
@@ -32,7 +32,7 @@ const { humanDate, time } = useDate()
       :to="`/events/${event.slug}`"
       class="event-title underlined-on-hover"
     >
-      <h3 class="font-extrabold text-xl md:text-lg leading-[1]">
+      <h3 class="font-extrabold text-xl md:text-lg leading-none">
         {{ event.title }}
       </h3>
     </NuxtLink>

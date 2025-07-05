@@ -23,7 +23,7 @@ const canApply = !props.job.fields.deadline || new Date(props.job.fields.deadlin
     </template>
     <div class="text-primary w-full flex flex-col gap-2 md:gap-4">
       <NuxtLink :to="`/jobs/${job.slug}`" class="underlined-on-hover">
-        <h2 class="text-lg leading-[1] font-extrabold">
+        <h2 class="text-lg leading-none font-extrabold">
           {{ job.title }}
         </h2>
       </NuxtLink>

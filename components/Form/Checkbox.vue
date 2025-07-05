@@ -42,8 +42,8 @@
 
 @media (max-width: 46rem) {
   .checkbox-input {
-    width: 2em;
-    height: 2em;
+    width: 1.75em;
+    height: 1.75em;
   }
 }
 </style>

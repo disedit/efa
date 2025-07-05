@@ -86,7 +86,7 @@ const tag = props.block.link?.url ? resolveComponent('NuxtLink') : 'div'
           'items-end text-right': block.alignment === 'right',
         }
       ]">
-      <h1 class="font-extrabold text-4xl selection-orange md:max-w-[50%] text-balance leading-[1]">
+      <h1 class="font-extrabold text-4xl selection-orange md:max-w-[50%] text-balance leading-none">
         <span
           :class="[
             { 'px-[.25em] box-decoration-clone leading-[1.6]': block.text_pill !== 'transparent' },

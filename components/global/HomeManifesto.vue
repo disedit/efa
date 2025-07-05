@@ -116,10 +116,10 @@ onUnmounted(() => {
   .home-scroller {
     position: relative;
     background-color: var(--color-primary);
-    min-height: calc(100vh - var(--spacing-navbar));
+    min-height: calc(100svh - var(--spacing-navbar));
     overflow: hidden;
     color: var(--color-white);
-    margin-top: -100vh;
+    margin-top: -100svh;
     display: flex;
     align-items: center;
   }
@@ -145,7 +145,7 @@ onUnmounted(() => {
       .items {
         overflow: auto;
         scroll-snap-type: x mandatory;
-        min-height: calc(100vh - var(--spacing-navbar));
+        min-height: calc(100svh - var(--spacing-navbar));
       }
     }
   }

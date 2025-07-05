@@ -11,7 +11,7 @@ const { link } = useUtils()
         v-if="!homeBlock.is_newsletter"
         :to="link(homeBlock.link)"
         :class="[
-          'bg-(--bg-color) text-(--text-color-secondary) p-site md:p-7 leading-[1]',
+          'bg-(--bg-color) text-(--text-color-secondary) p-site md:p-7 leading-none',
           'text-2xl font-extrabold min-h-[4em] md:min-h-[2em] hover:text-(--text-color)',
           `color-${homeBlock.color}`
         ]"

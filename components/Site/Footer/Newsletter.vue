@@ -7,10 +7,10 @@
     name="mc-embedded-subscribe-form"
     target="_self"
   >
-    <h3 class="newsletter-title font-extrabold text-lg leading-[1]">
+    <h3 class="newsletter-title font-extrabold text-lg leading-none mb-1">
       Become an insider
     </h3>
-    <p class="text-base">Join our newsletter</p>
+    <p class="text-base leading-tight">Join our newsletter</p>
 
     <div class="flex flex-col gap-site my-4 md:my-6">
       <label for="mce-FNAME" class="sr-only">First Name </label>
@@ -30,7 +30,7 @@
         required
       />
 
-      <label class="flex items-center text-sm gap-2">
+      <label class="flex items-center text-base md:text-sm gap-2">
         <FormCheckbox
           name="MMERGE3"
           value="I have read and agree to the Terms and Conditions."
