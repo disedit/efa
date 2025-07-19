@@ -33,7 +33,7 @@ const hasOneFile = (document) => {
             <h3 class="document-title">
               {{ document.title }}
             </h3>
-            <ul v-if="!hasOneFile(document)" class="document-files flex gap-2">
+            <ul v-if="!hasOneFile(document)" class="document-files flex flex-wrap gap-1">
               <li v-for="file in document.files" :key="file.id">
                 <NuxtLink :to="file.file.url" class="flex items-center gap-1">
                   <Icon name="ri:file-download-line" />
@@ -65,8 +65,9 @@ const hasOneFile = (document) => {
   &-files {
     display: flex;
     font-size: var(--text-sm);
-    margin-left: -.25em;
+    margin-left: -.5em;
     margin-bottom: .5em;
+    margin-top: .5em;
 
     a {
       width: fit-content;

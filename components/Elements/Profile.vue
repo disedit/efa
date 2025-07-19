@@ -5,7 +5,7 @@ const props = defineProps({
 
 const { platforms } = useUtils()
 
-const socials = props.profile.links ? props.profile.links.map(({ platform, url: link }) => {
+const socials = props.profile.socials ? props.profile.socials.map(({ platform, url: link }) => {
   return {
     name: platforms[platform].name,
     link,
