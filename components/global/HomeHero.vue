@@ -10,7 +10,7 @@ const animated = ref(false)
 const hasVideo = computed(() => !!props.block.background_video)
 
 watch(imageLoaded, (loaded) => {
-  if (loaded && props.block.animate && canAnimate.value) {
+  if (loaded && props.block.animate && canAnimate.value && !waitedTooLog.value) {
     animate()
   }
 })
