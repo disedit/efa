@@ -37,6 +37,7 @@ export const useUtils = () => {
       x: { name: 'X', icon: 'fa6-brands:x-twitter' },
       tiktok: { name: 'TikTok', icon: 'fa6-brands:tiktok' },
       email: { name: 'Email', icon: 'ri:mail-line' },
+      website: { name: 'Website', icon: 'ri:global-line' },
       youtube: { name: 'YouTube', icon: 'fa6-brands:youtube' },
       bluesky: { name: 'Bluesky', icon: 'ri:bluesky-line' },
       linkedin: { name: 'LinkedIn', icon: 'fa6-brands:linkedin' },

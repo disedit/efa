@@ -1,90 +1,52 @@
 <script lang="ts" setup>
-const props = defineProps({
+defineProps({
   profile: { type: Object, required: true }
 })
 
-const { platforms } = useUtils()
-
-const socials = props.profile.socials ? props.profile.socials.map(({ platform, url: link }) => {
-  return {
-    name: platforms[platform].name,
-    link,
-    icon: platforms[platform].icon,
-  }
-}) : null
+const showModal = ref(false)
+const modalProfile = ref(null)
+function openProfile (e) {
+  e.stopPropagation()
+  showModal.value = true
+  nextTick(() => {
+    modalProfile.value && modalProfile.value.open()
+  })
+}
 </script>
 
 <template>
-  <article class="profile">
+  <article class="profile" @click.capture="openProfile">
     <div class="profile-card bordered gap-3 bg-true-white p-3 md:p-site">
-      <div class="profile-picture">
-        <NuxtImg
-          :src="profile.picture"
-          :alt="profile.name"
-          class="profile-picture-img"
-          sizes="800px"
-        />
-      </div>
-      <div class="flex flex-col gap-1">
-        <h2 class="profile-name font-extrabold text-md text-primary leading-tighter">
-          {{ profile.name }}
-        </h2>
-        <p class="text-sm font-medium mb-1">
-          {{ profile.description }}
-        </p>
-        <a
-          v-if="profile.member_party"
-          :href="profile.member_party.website"
-          target="_blank"
-          class="group flex gap-2 items-center text-sm font-medium leading-none"
-        >
-          <span v-if="profile.member_party.acronym" class="bg-primary text-white py-1 px-2 font-bold whitespace-nowrap">{{ profile.member_party.acronym }}</span>
-          <span class="group-hover:bg-primary/15 group-hover:px-2 py-1 transition-all text-blackish group-hover:text-primary">{{ profile.member_party.name }}</span>
-        </a>
-      </div>
-      <UtilsSocials
-        v-if="socials"
-        :socials="socials"
-        class="mt-auto text-base"
-      />
+      <ElementsProfileDetails :profile="profile" />
     </div>
     <div class="profile-shadow shadow-1 bordered bg-true-white" />
     <div class="profile-shadow shadow-2 bordered bg-true-white" />
   </article>
+  <UtilsModal
+    v-if="showModal"
+    ref="modalProfile"
+    :label="profile.name"
+  >
+    <div class="full-profile">
+      <ElementsProfileDetails :profile="profile" with-summary />
+    </div>
+  </UtilsModal>
 </template>
 
 <style lang="scss" scoped>
 .profile {
   position: relative;
   --shift-by: 1.5rem;
+  cursor: pointer;
+  display: flex;
 
   &-card {
     position: relative;
     display: flex;
     flex-direction: column;
-    aspect-ratio: 1 / 1.5;
     z-index: 10;
     transition: .25s ease;
-  }
-
-  &-picture {
-    position: relative;
-
-    &-img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-color: var(--color-primary);
-      opacity: .5;
-      mix-blend-mode: lighten;
-      transition: .25s ease;
-    }
+    height: 100%;
   }
 
   &:hover {
@@ -118,9 +80,30 @@ const socials = props.profile.socials ? props.profile.socials.map(({ platform, u
   }
 }
 
+.full-profile {
+  display: grid;
+  grid-template-columns: 17rem 1fr;
+  grid-template-areas:
+    "picture details"
+    "picture contact"
+    "picture socials"
+    "summary summary";
+  gap: 1rem;
+}
+
 @media (max-width: 46rem) {
   .profile-card {
     --shift-by: .5rem;
+  }
+
+  .full-profile {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "picture"
+      "details"
+      "contact"
+      "socials"
+      "summary";
   }
 }
 </style>

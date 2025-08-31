@@ -49,6 +49,7 @@ const floating = computed(() => {
         {{ option.label }}
       </option>
     </select>
+    <Icon name="ri:arrow-down-s-line" class="icon" />
   </div>
 </template>
 
@@ -61,6 +62,15 @@ const floating = computed(() => {
   font-size: var(--text-base);
   font-weight: 500;
   transition: 0.15s ease-in-out;
+}
+
+.icon {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 1rem;
+  font-size: 2rem;
+  transform: translateY(-50%);
 }
 
 .floating {

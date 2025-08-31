@@ -10,6 +10,8 @@
   --color-blue: #3b97d3;
   --color-yellow: #f0c419;
   --color-teal: #26b999;
+  --color-red: #da353b;
+  --color-green: #32b571;
   --color-black: #000;
   --color-blackish: #1c171e;
   --color-primary: var(--color-purple);
@@ -36,9 +38,7 @@
   --border-width: 2.5px;
   --card-padding: 2rem;
   --color-lime-*: initial;
-  --color-red-*: initial;
   --color-amber-*: initial;
-  --color-green-*: initial;
   --color-emerald-*: initial;
   --color-cyan-*: initial;
   --color-sky-*: initial;

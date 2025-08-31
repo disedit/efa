@@ -49,4 +49,12 @@
   .color-teal {
     --bg-color: var(--color-teal);
   }
+
+  .color-red {
+    --bg-color: var(--color-red);
+  }
+
+  .color-green {
+    --bg-color: var(--color-red);
+  }
 }
