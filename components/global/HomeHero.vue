@@ -5,6 +5,7 @@ const { link } = useUtils()
 const hero = ref(null)
 const imageLoaded = ref(false)
 const canAnimate = ref(false)
+const waitedTooLog = ref(false)
 const animated = ref(false)
 const hasVideo = computed(() => !!props.block.background_video)
 
@@ -17,11 +18,16 @@ watch(imageLoaded, (loaded) => {
 onMounted(() => {
   setTimeout(() => {
     canAnimate.value = true
-
     if ((props.block.animate && imageLoaded.value && !animated.value) || hasVideo.value) {
       animate()
     }
   }, 500)
+  setTimeout(() => {
+    waitedTooLog.value = true
+    if (props.block.animate && !animated.value) {
+      animate()
+    }
+  }, 1000)
 })
 
 function animate() {
@@ -86,7 +92,7 @@ const tag = props.block.link?.url ? resolveComponent('NuxtLink') : 'div'
           'items-end text-right': block.alignment === 'right',
         }
       ]">
-      <h1 class="font-extrabold text-4xl selection-orange md:max-w-[50%] text-balance leading-none">
+      <h1 class="font-extrabold text-3xl md:text-4xl selection-orange md:max-w-[50%] text-balance leading-none">
         <span
           :class="[
             { 'px-[.25em] box-decoration-clone leading-[1.6]': block.text_pill !== 'transparent' },
@@ -99,11 +105,11 @@ const tag = props.block.link?.url ? resolveComponent('NuxtLink') : 'div'
           </span>
         </span>
       </h1>
-      <p v-if="block.text" :class="['text-md', block.text_pill === 'transparent' ? textColors[block.text_color] : 'text-white']">
+      <p v-if="block.text" :class="['word text-md max-w-[60%] text-balance', block.text_pill === 'transparent' ? textColors[block.text_color] : 'text-white']">
         {{ block.text }}
       </p>
 
-      <p v-if="block.cta" class="cta relative w-fit">
+      <p v-if="block.cta" class="word cta relative w-fit">
         <span class="inline-block text-base bg-white text-purple font-bold p-2 px-4 bordered transition">
           {{ block.cta }}
         </span>
