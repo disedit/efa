@@ -4,7 +4,7 @@ const props = defineProps({ block: Object, context: Object })
 const { $wp } = useNuxtApp()
 
 const key = props.block.populate_with ? 'populate' : 'ids'
-const value = props.block.populate_with.join(',') || props.block.profiles.join(',')
+const value = props.block.populate_with ? props.block.populate_with.join(',') : props.block.profiles.join(',')
 const { data: profiles } = await useAsyncData(
   `profiles-${value}`, () => $wp.profiles().param(key, value)
 )
