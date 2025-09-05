@@ -16,7 +16,7 @@ function openProfile (e) {
 
 <template>
   <article class="profile" @click.capture="openProfile">
-    <div class="profile-card bordered gap-3 bg-true-white p-3 md:p-site">
+    <div class="profile-card bordered gap-3 bg-true-white p-3 md:p-site w-full">
       <ElementsProfileDetails :profile="profile" />
     </div>
     <div class="profile-shadow shadow-1 bordered bg-true-white" />
