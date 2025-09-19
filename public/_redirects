@@ -1,0 +1,16 @@
+# Redirects from what the browser requests to what we serve
+/news-and-events                                                 /news/
+/bureau-member                                                   /who-we-are/bureau/
+/parliament-member                                               /who-we-are/meps/
+/fr/jobs                                                         /work-with-us/
+/how-we-work                                                     /work-with-us/
+/resource-center                                                 /documents/
+/staff-member                                                    /who-we-are/secretariat/
+/videos                                                          /
+/leader	                                                         /who-we-are/political-leaders/
+/our-history                                                     /what-we-stand-for/history/
+/member-parties                                                  /who-we-are/members/
+/newsletter                                                      /
+/qa-on-membership                                                /who-we-are/members/become-a-member/
+/resource-center/internal-organizations/electoral-manifestos	   /documents/publications/electoral-manifestos/
+/resource-center/internal-organizations/general-assembly         /documents/internal-organization/general-assembly/
