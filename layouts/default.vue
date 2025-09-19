@@ -11,6 +11,9 @@ useHead({
     { rel: 'shortcut icon', href: '/favicons/favicon.ico' },
     { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/apple-touch-icon.png' },
     { rel: 'manifest', href: '/favicons/site.webmanifest' }
+  ],
+  script: [
+    { src: 'https://cloud.umami.is/script.js', 'data-website-id': '06b7531d-f38a-4b93-b68a-26243deae410', defer: true }
   ]
 })
 
