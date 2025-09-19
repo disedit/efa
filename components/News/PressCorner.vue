@@ -25,6 +25,7 @@ const settings = await useSettings()
       <span class="underlined-to-bold">{{ settings.press_corner.phone }}</span>
     </a>
     <a
+      v-if="settings.press_corner.file"
       :href="settings.press_corner.file.url"
       download
       class="flex items-center gap-2"
