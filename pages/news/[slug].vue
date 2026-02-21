@@ -78,7 +78,7 @@ useHead({ title })
             sizes="100vw md:1600px"
           />
 
-          <div v-html="post.content" class="text-base text-blackish prose max-w-[85ch]" />
+          <div v-html="post.content" class="text-base text-blackish prose max-w-[85ch] my-8 lg:my-0" />
 
           <div v-if="post.tags || post.categories" class="flex gap-2 text-sm text-primary mt-8 font-medium">
             <Icon name="ri:price-tag-3-line" class="text-base relative translate-y-(--border-width)" />
@@ -98,7 +98,7 @@ useHead({ title })
         </div>
         <aside>
           <div class="sticky top-navbar flex flex-col gap-site">
-            <NewsMore v-if="relatedPosts && relatedPosts.length" :posts="relatedPosts" class="order-2 lg:order-1" />
+            <NewsMore v-if="relatedPosts && relatedPosts.length" :posts="relatedPosts" class="order-2 lg:order-1 mt-10 lg:mt-0" />
             <NewsPressCorner class="order-3 lg:order-2" />
             <ClientOnly>
               <UtilsShare :share-text="post.title" size="md" class="order-1 lg:order-3" />

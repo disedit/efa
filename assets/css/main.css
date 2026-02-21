@@ -54,7 +54,9 @@
 @media (max-width: 46rem) {
   :root {
     --spacing-inner: var(--spacing-site);
-    --text-base: 1rem;
+    --text-xs: .9rem;
+    --text-sm: 1rem;
+    --text-base: 1.25rem;
     --card-padding: 1.5rem;
   }
 }
