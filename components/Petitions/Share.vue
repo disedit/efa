@@ -27,7 +27,7 @@ const platforms = [
     url: () => {
       const text = encodeURIComponent(props.shareText)
       const url = encodeURIComponent(window.location.href)
-      return `https://x.com/intent/tweet?text=${text}&url=${url}`
+      return `https://x.com/intent/post?text=${text}&url=${url}`
     }
   },
   {

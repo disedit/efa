@@ -29,7 +29,7 @@ onUnmounted(() => {
         :count="signatures.count"
         :block="block"
       />
-      <a href="#form" class="flex bg-primary text-white font-extrabold p-5 text-lg mt-4 rounded-md gap-2 justify-center items-center">
+      <a href="#form" class="flex bg-primary text-white font-extrabold p-5 text-lg mt-4 rounded-md gap-2 justify-center items-center max-w-[34rem] mx-auto">
         <Icon name="ri:pencil-ai-2-fill" />
         Sign the petition!
       </a>

@@ -1,9 +1,9 @@
 <script setup>
-const props = defineProps({ block: Object })
+const props = defineProps({ block: Object, edge: Boolean })
 </script>
 
 <template>
-  <section class="page-container google-forms text-blackish">
+  <section :class="['google-forms text-blackish', { 'page-container': !edge }]">
     <div v-html="block.embed" />
   </section>
 </template>

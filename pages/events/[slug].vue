@@ -81,7 +81,31 @@ useHead({ title })
             {{ event.fields.button_label || 'More details' }}
           </UtilsButton>
         </div>
+        <FilloutForm
+          v-if="event.fields?.forms?.fillout_form_id && event.fields.forms.fillout_form_type !== 'standard'"
+          :block="{
+            fillout_form_id: event.fields.forms.fillout_form_id,
+            embed_type: event.fields.forms.fillout_form_type,
+            button_text: 'Register'
+          }"
+          edge
+        />
         <div v-html="event.content" class="text-base text-blackish prose max-w-[85ch]" />
+        <GoogleForms
+          v-if="event.fields?.forms?.google_form"
+          :block="{
+            embed: event.fields.forms.google_form
+          }"
+          edge
+        />
+        <FilloutForm
+          v-if="event.fields?.forms?.fillout_form_id && event.fields.forms.fillout_form_type === 'standard'"
+          :block="{
+            fillout_form_id: event.fields.forms.fillout_form_id,
+            embed_type: 'standard'
+          }"
+          edge
+        />
       </div>
     </article>
   </main>

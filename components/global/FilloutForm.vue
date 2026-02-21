@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ block: Object })
+defineProps({ block: Object, edge: Boolean })
 
 useHead({
   script: [
@@ -12,7 +12,7 @@ useHead({
 </script>
 
 <template>
-  <section class="page-container google-forms text-blackish">
+  <section :class="['text-blackish', { 'page-container': !edge }]">
     <div
       v-if="block.embed_type === 'popup'"
       :data-fillout-id="block.fillout_form_id"
