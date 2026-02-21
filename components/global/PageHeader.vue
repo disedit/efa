@@ -6,6 +6,13 @@ const { page } = useUtils()
 </script>
 
 <template>
+  <div v-if="block.image">
+    <NuxtPicture
+      :src="block.image"
+      :img-attrs="{ class: 'w-full h-[calc(5rem+25vh)] object-cover' }"
+      sizes="100vw md:2000px"
+    />
+  </div>
   <header class="page-container pt-inner" :style="block.compact ? { '--breakpoint-3xl': '76rem' } : null">
     <nav v-if="!block.hide_breadcrumbs && context && context.breadcrumbs" aria-label="Breadcrumb" class="breadcrumb relative z-1 font-bold text-base">
       <ol class="flex items-center flex-wrap">
