@@ -4,7 +4,7 @@ const props = defineProps({ block: Object })
 // Get signature count from API
 const { $wp } = useNuxtApp()
 const { data: signatures, refresh } = await useLazyAsyncData(
-  `signatures-${props.block.fillout_form_id}`, () => $wp.signatures().param('form_id', props.block.fillout_form_id)
+  `signatures-${props.block.form_id}`, () => $wp.signatures().param('form_id', props.block.form_id).param('provider', props.block.form_provider)
 )
 let interval
 
@@ -58,7 +58,19 @@ onUnmounted(() => {
           :block="block"
         />
       </div>
-      <FilloutForm :block="{ fillout_form_id: block.fillout_form_id, embed_type: 'standard' }" edge />
+      <div class="bg-true-white rounded-xl">
+        <FilloutForm
+          v-if="block.form_provider === 'fillout'"
+          :block="{ fillout_form_id: block.form_id, embed_type: 'standard' }"
+          edge
+        />
+        <TallyForm
+          v-else-if="block.form_provider === 'tally'"
+          :block="{ tally_form_id: block.form_id }"
+          edge
+          class="p-5"
+        />
+      </div>
     </div>
     <div class="lg:hidden">
       <ClientOnly>
