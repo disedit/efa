@@ -1,6 +1,8 @@
 <script setup>
 const props = defineProps({
+  title: { type: String, default: 'Share' },
   shareText: { type: String, default: 'Sign this petition!' },
+  size: { type: String, default: 'lg' },
 })
 
 const platforms = [
@@ -69,8 +71,10 @@ onMounted(() => {
 
 <template>
   <div>
-    <h4 class="font-bold text-purple mb-4 text-md">Share this petition!</h4>
-    <div class="flex flex-wrap gap-4 text-lg">
+    <h4 class="font-bold text-purple mb-4 text-md">
+      {{ title }}
+    </h4>
+    <div :class="['flex flex-wrap gap-4', size === 'lg' ? 'text-lg' : 'text-md']">
       <a
         v-for="platform in platforms"
         :key="platform.name" :href="platform.url ? platform.url() : '#'"

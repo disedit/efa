@@ -74,7 +74,7 @@ const progressBarWidth = computed(() => {
   <div
     :id="id"
     ref="container"
-    class="bg-true-white max-w-[34rem] mx-auto rounded-xl p-8 text-purple text-md flex flex-col items-center gap-6"
+    class="bg-true-white rounded-xl p-8 text-purple text-md flex flex-col items-center gap-6"
   >
     <div class="font-medium">
       <span class="text-xl counter">{{ count }}</span> signatures

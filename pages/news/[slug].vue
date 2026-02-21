@@ -98,8 +98,11 @@ useHead({ title })
         </div>
         <aside>
           <div class="sticky top-navbar flex flex-col gap-site">
-            <NewsMore v-if="relatedPosts && relatedPosts.length" :posts="relatedPosts" />
-            <NewsPressCorner />
+            <NewsMore v-if="relatedPosts && relatedPosts.length" :posts="relatedPosts" class="order-2 lg:order-1" />
+            <NewsPressCorner class="order-3 lg:order-2" />
+            <ClientOnly>
+              <UtilsShare :share-text="post.title" size="md" class="order-1 lg:order-3" />
+            </ClientOnly>
           </div>
         </aside>
       </article>

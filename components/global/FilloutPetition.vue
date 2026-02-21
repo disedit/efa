@@ -21,7 +21,7 @@ onUnmounted(() => {
 
 
 <template>
-  <section ref="container" class="page-container grid lg:grid-cols-[1.5fr_1fr] gap-inner text-blackish">
+  <section ref="container" class="page-container grid lg:grid-cols-[2fr_1fr] gap-inner text-blackish">
     <div class="lg:hidden">
       <PetitionsSignatures
         id="signatureCountMobile"
@@ -29,7 +29,7 @@ onUnmounted(() => {
         :count="signatures.count"
         :block="block"
       />
-      <a href="#form" class="flex bg-primary text-white font-extrabold p-5 text-lg mt-4 rounded-md gap-2 justify-center items-center max-w-[34rem] mx-auto">
+      <a href="#form" class="flex bg-primary text-white font-extrabold p-5 text-lg mt-4 rounded-md gap-2 justify-center items-center">
         <Icon name="ri:pencil-ai-2-fill" />
         Sign the petition!
       </a>
@@ -45,11 +45,11 @@ onUnmounted(() => {
       />
       <div class="hidden lg:block mt-8">
         <ClientOnly>
-          <PetitionsShare :share-text="block.share_text" />
+          <UtilsShare title="Share this petition!" :share-text="block.share_text" />
         </ClientOnly>
       </div>
     </div>
-    <div id="form">
+    <div id="form" class="flex flex-col gap-8">
       <div v-if="signatures && signatures.count" class="hidden lg:block">
         <PetitionsSignatures
           id="signatureCountDesktop"
@@ -58,11 +58,11 @@ onUnmounted(() => {
           :block="block"
         />
       </div>
-      <FilloutForm :block="{ fillout_form_id: block.fillout_form_id, embed_type: 'standard' }" />
+      <FilloutForm :block="{ fillout_form_id: block.fillout_form_id, embed_type: 'standard' }" edge />
     </div>
     <div class="lg:hidden">
       <ClientOnly>
-        <PetitionsShare :share-text="block.share_text" />
+        <UtilsShare title="Share this petition!" :share-text="block.share_text" />
       </ClientOnly>
     </div>
   </section>
