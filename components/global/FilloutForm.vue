@@ -12,7 +12,7 @@ useHead({
 </script>
 
 <template>
-  <section :class="['text-blackish', { 'page-container': !edge }]">
+  <section :class="['text-blackish', { 'page-container': !edge }]" :style="{ '--breakpoint-3xl': '76rem' }">
     <div
       v-if="block.embed_type === 'popup'"
       :data-fillout-id="block.fillout_form_id"
