@@ -11,7 +11,9 @@ useHead({
 })
 
 onMounted(() => {
-  Tally.loadEmbeds()
+  if (window.Tally) {
+    window.Tally.loadEmbeds()
+  }
 })
 </script>
 
