@@ -6,7 +6,7 @@ const { page } = useUtils()
 </script>
 
 <template>
-  <header class="page-container pt-inner">
+  <header class="page-container pt-inner" :style="block.compact ? { '--breakpoint-3xl': '76rem' } : null">
     <nav v-if="!block.hide_breadcrumbs && context && context.breadcrumbs" aria-label="Breadcrumb" class="breadcrumb relative z-1 font-bold text-base">
       <ol class="flex items-center flex-wrap">
         <template v-for="item in context.breadcrumbs" :key="item.ID || item.id" >
