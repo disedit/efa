@@ -11,6 +11,7 @@ const form = reactive({
   email: '',
   organisation: '',
   message: '',
+  company: ''
 })
 
 const submit = async () => {
@@ -20,7 +21,7 @@ const submit = async () => {
   try {
     const formData = new FormData()
     formData.append('name', form.name)
-    formData.append('organisation', form.city)
+    formData.append('organisation', form.organisation)
     formData.append('email', form.email)
     formData.append('message', form.message)
     formData.append('company', form.company)
@@ -82,6 +83,11 @@ const submit = async () => {
               name="organisation"
               label="Organisation"
               v-model="form.organisation"
+            />
+            <input
+              type="hidden"
+              name="company"
+              v-model="form.company"
             />
             <FormFloatInput
               type="textarea"
