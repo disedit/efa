@@ -44,7 +44,7 @@ const { humanDate, time } = useDate()
         {{ event.fields.venue }}
         {{ event.fields.address }}
       </address>
-      <div v-html="event.fields.details" />
+      <div v-html="event.fields.details" class="prose" />
       <div v-if="event.fields.button_label" class="mt-auto">
         <UtilsButton
           :to="event.fields.button_link"

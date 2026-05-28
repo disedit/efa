@@ -68,9 +68,9 @@ useHead({ title })
             <div class="text-md">{{ event.fields.address }}</div>
           </div>
         </address>
-        <div v-if="event.fields.details" class="flex gap-2 text-lg leading-none">
-          <Icon name="ri:information-2-line" />
-          <div v-html="event.fields.details" class="text-md" />
+        <div v-if="event.fields.details" class="flex gap-2 text-lg leading-tighter">
+          <Icon name="ri:information-2-line" class="shrink-0" />
+          <div v-html="event.fields.details" class="prose text-md" />
         </div>
         <div v-if="event.fields.button_link">
           <UtilsButton
