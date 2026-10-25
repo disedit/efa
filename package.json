@@ -23,8 +23,12 @@
     "wpapi": "^1.2.2"
   },
   "devDependencies": {
+    "@iconify-json/ri": "^1.2.10",
     "@nuxt/eslint": "^1.17.0",
     "eslint": "^10.13.0",
     "sass": "^1.106.1"
+  },
+  "overrides": {
+    "parse-link-header": "^2.0.0"
   }
 }
