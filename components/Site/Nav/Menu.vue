@@ -48,8 +48,8 @@ function unhover() {
         v-if="item.acf_fc_layout === 'submenu'"
         :to="link(item.link)"
         :aria-expanded="hovering === i ? 'true' : 'false'"
-        @click.prevent="toggleHover(i)"
         :class="['menu-link transition has-submenu', { active: isActive(item.link) }]"
+        @click.prevent="toggleHover(i)"
       >
         {{ item.link?.title }}
       </NuxtLink>
@@ -64,8 +64,8 @@ function unhover() {
         <li v-for="(subitem, s) in item.pages" :key="s">
           <NuxtLink
             :to="link(subitem.link)"
-            @click="unhover"
             class="submenu-link"
+            @click="unhover"
           >
             {{ subitem.link?.title }}
           </NuxtLink>

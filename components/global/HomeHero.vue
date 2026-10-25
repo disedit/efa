@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({ block: Object, context: Object })
+const props = defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 const { $gsap, $ScrollTrigger } = useNuxtApp()
 const { link } = useUtils()
 const hero = ref(null)
@@ -131,12 +131,12 @@ const tag = props.block.link?.url ? resolveComponent('NuxtLink') : 'div'
         :alt="block.background_image.alt"
         sizes="100vw md:600px lg:800px xxl:1300px"
         preload
-        @load="imageLoaded = true"
         :img-attrs="{ class: 'h-full w-full object-cover' }"
         class="w-full"
+        @load="imageLoaded = true"
       />
     </div>
-    <div v-if="block.overlay" class="absolute inset-0 z-[2] bg-black/40"></div>
+    <div v-if="block.overlay" class="absolute inset-0 z-[2] bg-black/40"/>
   </header>
 </template>
 

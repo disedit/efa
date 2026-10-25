@@ -17,7 +17,7 @@ defineProps({
         <span class="text-[2rem] font-bold -translate-y-[1px]">EFA</span>
       </div>
 
-      <div v-html="address" class="prose text-base leading-tight" />
+      <div class="prose text-base leading-tight" v-html="address" />
     </div>
 
     <UtilsSocials :socials="socials" class="text-md" />

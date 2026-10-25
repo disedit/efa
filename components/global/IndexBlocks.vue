@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ block: Object, context: Object })
+defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 
 const { page } = useUtils()
 </script>

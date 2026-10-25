@@ -85,18 +85,18 @@ onMounted(() => {
           <span class="sr-only">Share on {{ platform.name }}</span>
       </a>
       <button
-        @click.prevent="copyToClipboard()"
         class="flex items-center gap-2 text-white bg-purple hover:bg-orange font-medium p-3 rounded-full cursor-pointer aspect-square"
         title="Copy link to clipboard"
+        @click.prevent="copyToClipboard()"
       >
         <Icon :name="copied ? 'ri:check-fill' : 'ri:link'" />
         <span class="sr-only">Copy link to clipboard</span>
       </button>
       <button
         v-if="canShare"
-        @click.prevent="shareDialog()"
         class="flex items-center gap-2 text-white bg-purple hover:bg-orange font-medium p-3 rounded-full cursor-pointer"
         title="More options to share"
+        @click.prevent="shareDialog()"
       >
         <Icon name="ri:more-fill" />
         <span class="sr-only">More options to share</span>

@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ block: Object, context: Object })
+defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 
 const { $wp, $gsap } = useNuxtApp()
 const { data: stats } = await useAsyncData(
@@ -25,10 +25,10 @@ onMounted(() => {
 
 <template>
   <section
+    ref="blocks"
     :class="[
       'page-container flex flex-wrap gap-site md:gap-8 md:pb-0',
     ]"
-    ref="blocks"
   >
     <div
       v-for="(card, i) in block.blocks"

@@ -1,9 +1,9 @@
 <script setup>
-defineProps({ block: Object, context: Object })
+defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 </script>
 
 <template>
   <section class="page-container text-blackish" :style="block.compact ? { '--breakpoint-3xl': '76rem' } : null">
-    <div v-html="block.text" :class="['prose hyphens-auto text-pretty text-md', { 'text-purple': block.text_color === 'purple' }]" />
+    <div :class="['prose hyphens-auto text-pretty text-md', { 'text-purple': block.text_color === 'purple' }]" v-html="block.text" />
   </section>
 </template>

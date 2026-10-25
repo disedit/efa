@@ -1,6 +1,6 @@
 <script setup>
-const props = defineProps({
-  error: Object
+defineProps({
+  error: { type: Object, required: true }
 })
 </script>
 

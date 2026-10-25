@@ -30,7 +30,8 @@ useHead({ title })
 
 <template>
   <main class="min-h-page">
-    <PageHeader :block="{
+    <PageHeader
+      :block="{
       breadcrumbs: [
         { post_name: 'work-with-us', post_title: 'Work with us' },
       ],
@@ -78,9 +79,9 @@ useHead({ title })
           </div>
         </div>
 
-        <div v-html="job.content" class="text-base text-blackish prose" :style="{'--color-th-background': 'var(--color-cream)', '--color-th-foreground': 'var(--color-primary)' }" />
+        <div class="text-base text-blackish prose" :style="{'--color-th-background': 'var(--color-cream)', '--color-th-foreground': 'var(--color-primary)' }" v-html="job.content" />
 
-        <div class="mt-6" v-if="canApply">
+        <div v-if="canApply" class="mt-6">
           <UtilsButton
             :to="job.fields.apply_url"
             class="font-bold text-md inline-flex"

@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({ block: Object })
+const props = defineProps({ block: { type: Object, required: true } })
 
 // Get signature count from API
 const { $wp } = useNuxtApp()
@@ -24,8 +24,8 @@ onUnmounted(() => {
   <section ref="container" class="page-container grid lg:grid-cols-[2fr_1fr] gap-inner text-blackish">
     <div class="lg:hidden">
       <PetitionsSignatures
-        id="signatureCountMobile"
         v-if="signatures && signatures.count && signatures.count > block.signature_threshold"
+        id="signatureCountMobile"
         :count="signatures.count"
         :block="block"
         class="bordered"
@@ -37,12 +37,12 @@ onUnmounted(() => {
     </div>
     <div>
       <div
-        v-html="block.petition_text"
         :class="['prose hyphens-auto text-pretty', {
           'text-purple': block.text_color === 'purple',
           'text-base': block.text_size === 'base',
           'text-md': block.text_size === 'large'
         }]"
+        v-html="block.petition_text"
       />
       <div class="hidden lg:block mt-8">
         <ClientOnly>
@@ -57,8 +57,8 @@ onUnmounted(() => {
         </template>
         <div v-if="signatures && signatures.count" class="hidden lg:block border-b-2 border-primary mb-2 -mx-site -mt-4 px-4 pb-2">
           <PetitionsSignatures
-            id="signatureCountDesktop"
             v-if="signatures.count > block.signature_threshold"
+            id="signatureCountDesktop"
             :count="signatures.count"
             :block="block"
           />

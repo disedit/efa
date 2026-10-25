@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({ block: Object, edge: Boolean })
+defineProps({ block: { type: Object, required: true }, edge: Boolean })
 </script>
 
 <template>

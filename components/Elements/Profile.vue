@@ -9,7 +9,7 @@ function openProfile (e) {
   e.stopPropagation()
   showModal.value = true
   nextTick(() => {
-    modalProfile.value && modalProfile.value.open()
+    modalProfile.value?.open()
   })
 }
 </script>

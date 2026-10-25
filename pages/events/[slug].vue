@@ -70,7 +70,7 @@ useHead({ title })
         </address>
         <div v-if="event.fields.details" class="flex gap-2 text-lg leading-tighter">
           <Icon name="ri:information-2-line" class="shrink-0" />
-          <div v-html="event.fields.details" class="prose text-md" />
+          <div class="prose text-md" v-html="event.fields.details" />
         </div>
         <div v-if="event.fields.button_link">
           <UtilsButton
@@ -90,7 +90,7 @@ useHead({ title })
           }"
           edge
         />
-        <div v-html="event.content" class="text-base text-blackish prose max-w-[85ch]" />
+        <div class="text-base text-blackish prose max-w-[85ch]" v-html="event.content" />
         <GoogleForms
           v-if="event.fields?.forms?.google_form"
           :block="{

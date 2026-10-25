@@ -30,7 +30,7 @@ const canApply = !props.job.fields.deadline || new Date(props.job.fields.deadlin
       <div v-if="job.fields.status" class="block md:hidden text-base text-primary">
         <strong>Status:</strong> {{ job.fields.status }}
       </div>
-      <div v-html="job.short_description" class="text-base prose w-full" />
+      <div class="text-base prose w-full" v-html="job.short_description" />
       <div v-if="canApply">
         <UtilsButton
           :to="job.fields.apply_url"

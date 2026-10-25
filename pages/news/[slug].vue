@@ -78,14 +78,14 @@ useHead({ title })
             sizes="100vw md:1600px"
           />
 
-          <div v-html="post.content" class="text-base text-blackish prose max-w-[85ch] my-8 lg:my-0" />
+          <div class="text-base text-blackish prose max-w-[85ch] my-8 lg:my-0" v-html="post.content" />
 
           <div v-if="post.tags || post.categories" class="flex gap-2 text-sm text-primary mt-8 font-medium">
             <Icon name="ri:price-tag-3-line" class="text-base relative translate-y-(--border-width)" />
             <ul class="flex flex-wrap gap-2">
-              <li v-for="category in post.categories" :key="category.id">
-                <NuxtLink :to="`/news/page/1/?categories=${category.id}`" class="hover:underline">
-                  <NewsCategory :category="category" />
+              <li v-for="postCategory in post.categories" :key="postCategory.id">
+                <NuxtLink :to="`/news/page/1/?categories=${postCategory.id}`" class="hover:underline">
+                  <NewsCategory :category="postCategory" />
                 </NuxtLink>
               </li>
               <li v-for="tag in post.tags" :key="tag.id">

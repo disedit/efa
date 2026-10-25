@@ -16,5 +16,5 @@ defineProps({
         'text-md md:text-base': size === 'base',
       }
     ]"
-  />
+  >
 </template>

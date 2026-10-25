@@ -1,7 +1,7 @@
 <script setup>
-defineProps({ block: Object, context: Object })
+defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 </script>
 
 <template>
-  <section v-html="block.code" :class="[{ 'page-container': block.container }]" />
+  <section :class="[{ 'page-container': block.container }]" v-html="block.code" />
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({ block: Object, context: Object })
+const props = defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 
 const { page, subpages } = useUtils()
 const children = subpages(props.context)

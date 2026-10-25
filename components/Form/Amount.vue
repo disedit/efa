@@ -45,11 +45,12 @@ watch(otherAmount, (newValue) => {
           }
         ]"
       >
-        <input type="radio" name="amount" :value="amount.amount" v-model="selectedAmount" class="sr-only" />
+        <input v-model="selectedAmount" type="radio" name="amount" :value="amount.amount" class="sr-only" >
         <span class="text-2xl leading-none">{{ amount.amount }} &euro;</span>
       </label>
 
-      <div :class="[
+      <div
+        :class="[
         'bordered flex flex-col text-lg text-md p-site cursor-pointer justify-center min-w-[12ch] min-h-[8rem] md:min-h-[11rem] focus-within:ring-purple focus-within:ring-3 focus-within:ring-offset-2',
         {
           'bg-primary text-white hover:bg-primary': selectedAmount === 'Other',
@@ -58,14 +59,14 @@ watch(otherAmount, (newValue) => {
       ]"
       @click="selectedAmount = 'Other'">
         <div class="flex items-center gap-1 text-2xl leading-none">
-          <input type="radio" name="amount" value="Other" v-model="selectedAmount" class="sr-only" />
+          <input v-model="selectedAmount" type="radio" name="amount" value="Other" class="sr-only" >
           <input
+            v-model="otherAmount"
             type="number"
             min="5"
             placeholder="5"
-            v-model="otherAmount"
             class="focus:outline-0 field-sizing-content min-w-[3ch] max-w-[5ch] p-0 leading-none selection-orange border-b-2 border-purple/50 focus:border-white/50"
-          />
+          >
           &euro;
         </div>
         <label for="otherAmount">

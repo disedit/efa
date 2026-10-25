@@ -30,7 +30,7 @@ onMounted(() => {
   window.addEventListener('resize', updateBreakpoint)
 
   // Set playing state if autoplay
-  if (props.autoplay || props.autoplayMuted) {
+  if (props.autoplay || props.autoplayMuted) {
     playing.value = true
     dismissAutoplay.value = !props.autoplayMuted
   }
@@ -82,7 +82,7 @@ async function playVideo () {
     await player.value.play()
     playing.value = true
     $emitter.emit('video:pause-all', props.id)
-  } catch(e) {
+  } catch {
     playing.value = false
   }
 }
@@ -90,7 +90,7 @@ async function playVideo () {
 async function autoplayVideo() {
   try {
     await player.value.play()
-  } catch(e) {
+  } catch {
     muted.value = true
     nextTick(() => { player.value.play() })
   } finally {
@@ -177,7 +177,7 @@ const objectFit = computed(() => {
 </script>
 
 <template>
-  <div class="video-player" :id="id">
+  <div :id="id" class="video-player">
     <Transition name="slide">
       <div v-if="!playing" class="video-title">
         <slot />
@@ -191,14 +191,14 @@ const objectFit = computed(() => {
       :autoplay="autoplay || autoplayMuted"
       playsinline
       :controls="showControls"
+      class="video"
+      :style="{ objectFit, objectPosition }"
       @timeupdate="onTimeUpdate"
       @click="!showControls ?  pauseVideo() : null"
       @loadedmetadata="onLoadedMetadata"
       @pause="playing = false"
       @play="playing = true"
-      class="video"
-      :style="{ objectFit, objectPosition }">
-    </video>
+    />
     <Transition name="video">
       <button
         v-if="!playing"

@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({
+defineProps({
   total: {
     type: Number,
     required: true
@@ -25,7 +25,6 @@ const props = defineProps({
       <Icon name="ri:arrow-left-line" />
       Previous
     </NuxtLink>
-    <span v-else-if="page > 1" />
     <NuxtLink
       v-if="total >= perPage"
       :to="`/events/page/${page + 1}/`"

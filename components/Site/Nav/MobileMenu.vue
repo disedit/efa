@@ -74,11 +74,11 @@ function onLeave (el, done) {
 }
 
 function onEnterCancelled() {
-  timeline && timeline.kill()
+  timeline?.kill()
 }
 
 function onLeaveCancelled() {
-  timeline && timeline.kill()
+  timeline?.kill()
 }
 </script>
 
@@ -90,8 +90,8 @@ function onLeaveCancelled() {
     @leave="onLeave"
     @leave-cancelled="onLeaveCancelled">
     <nav
-      id="mainNav"
       v-if="open"
+      id="mainNav"
       class="mobile-menu"
       aria-label="Main navigation"
     >

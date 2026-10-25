@@ -22,7 +22,7 @@ defineProps({
   }
 })
 
-const modelValue = defineModel()
+const modelValue = defineModel({ type: [String, Number] })
 const focused = ref(false)
 const floating = computed(() => {
   return !!modelValue.value || focused.value
@@ -37,8 +37,8 @@ const floating = computed(() => {
     </label>
     <select
       :id="name"
-      :name="name"
       v-model="modelValue"
+      :name="name"
       v-bind="$attrs"
       :required="required"
       class="appearance-none w-full px-3 md:px-4 pt-6 md:pt-8 pb-2 md:pb-3 text-md md:text-base font-medium"

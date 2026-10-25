@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ block: Object, context: Object })
+defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 
 const { $gsap, $ScrollTrigger, $emitter } = useNuxtApp()
 const { setDark, unsetDark } = useColorMode()
@@ -90,14 +90,14 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  scroller && scroller.kill()
-  animations && animations.kill()
+  scroller?.kill()
+  animations?.kill()
 })
 </script>
 
 <template>
-  <section :class="['home-scroller', { hover }]" ref="wrapper">
-    <div class="items" ref="items">
+  <section ref="wrapper" :class="['home-scroller', { hover }]">
+    <div ref="items" class="items">
       <div class="filler" />
       <HomeManifestoChapter
         v-for="(chapter, i) in block.sections"

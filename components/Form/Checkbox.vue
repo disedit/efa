@@ -3,7 +3,7 @@
     type="checkbox"
     v-bind="$attrs"
     class="checkbox-input"
-  />
+  >
 </template>
 
 <style lang="scss" scoped>

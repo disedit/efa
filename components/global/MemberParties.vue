@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ block: Object, context: Object })
+defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 
 const { $wp } = useNuxtApp()
 const { data: members } = await useAsyncData(
@@ -72,10 +72,10 @@ function openArea (area) {
           <a
             href="#"
             class="member"
+            :class="{ hover: hovering === member.svg_area }"
             @mouseenter="hover(member.svg_area)"
             @mouseleave="unhover(member.svg_area)"
             @click.prevent="openMember(member)"
-            :class="{ hover: hovering === member.svg_area }"
           >
             <span class="member-acronym">
               {{ member.acronym }}
@@ -92,10 +92,10 @@ function openArea (area) {
             <a
               href="#"
               class="member"
+              :class="{ hover: hovering === member.svg_area }"
               @mouseenter="hover(member.svg_area)"
               @mouseleave="unhover(member.svg_area)"
               @click.prevent="openMember(member)"
-              :class="{ hover: hovering === member.svg_area }"
             >
               <span class="member-picture">
                 <NuxtImg :src="member.logo" />
@@ -107,7 +107,7 @@ function openArea (area) {
       </template>
     </div>
     <div class="hidden md:block">
-      <div v-html="block.svg" class="map sticky top-0 flex justify-end" />
+      <div class="map sticky top-0 flex justify-end" v-html="block.svg" />
     </div>
   </section>
   <UtilsModal

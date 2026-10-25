@@ -1,11 +1,12 @@
 <script setup>
-const props = defineProps({ block: Object, context: Object })
+const props = defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 const { page, subpages } = useUtils()
 const children = subpages(props.context)
 </script>
 
 <template>
-  <ul :class="[
+  <ul
+    :class="[
     'grid gap-site',
     {
       'grid-cols-2 md:grid-cols-4 lg:grid-cols-5': block.max_columns == 5,

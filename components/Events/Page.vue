@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({
+defineProps({
   events: {
     type: Array,
     required: true

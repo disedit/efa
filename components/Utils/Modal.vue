@@ -35,11 +35,11 @@ defineExpose({
 </script>
 
 <template>
-  <dialog ref="dialog" @click="closeFromEvent" class="modal bg-transparent relative backdrop:bg-cream/75">
+  <dialog ref="dialog" class="modal bg-transparent relative backdrop:bg-cream/75" @click="closeFromEvent">
     <div class="max-w-[900px] mx-auto">
       <div v-if="label" class="modal-tab flex items-center gap-8 relative bg-true-white text-primary text-base font-bold bordered border-b-0 w-fit py-2 px-4">
         <h2>{{ label }}</h2>
-        <button @click="closeModal" class="flex items-center cursor-pointer hover:text-orange" aria-label="Close modal">
+        <button class="flex items-center cursor-pointer hover:text-orange" aria-label="Close modal" @click="closeModal">
           <Icon name="ri:close-large-fill" />
         </button>
       </div>

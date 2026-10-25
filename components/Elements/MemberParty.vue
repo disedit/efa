@@ -18,7 +18,7 @@ const cleanUrl = (url) => {
   try {
     const urlObj = new URL(url)
     return urlObj.hostname.replace(/^www\./, '') + urlObj.pathname.replace(/\/$/, '')
-  } catch (e) {
+  } catch {
     return url // Return original if URL parsing fails
   }
 }

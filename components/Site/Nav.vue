@@ -31,7 +31,7 @@ const showMenu = () => {
   setMenuOpen()
 }
 
-const hideMenu = (index) => {
+const hideMenu = () => {
   menuOpen.value = false
   unsetMenuOpen()
 }
@@ -67,11 +67,11 @@ function toggleMenu () {
       </UtilsButton>
     </div>
     <button
-      @click="toggleMenu"
       :aria-label="menuOpen ? 'Close menu' : 'Open menu'"
       aria-controls="mainNav"
       :aria-expanded="menuOpen ? 'true' : 'false'"
       class="flex xl:hidden text-primary p-2 -m-2"
+      @click="toggleMenu"
     >
       <IconHamburger v-if="!menuOpen" class="h-[1.75rem] w-[1.75rem]" />
       <IconClose v-else class="h-[1.5rem] w-[1.5rem]" />

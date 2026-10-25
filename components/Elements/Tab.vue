@@ -17,14 +17,16 @@ defineProps({
 
 <template>
   <article :class="['tab flex flex-col', { rises }]">
-    <div :class="[
+    <div
+      :class="[
       'tab-label relative flex gap-site items-center z-10',
       {
         'text-md': labelSize === 'md',
         'text-base': labelSize === 'base',
       }
     ]">
-      <div :class="[
+      <div
+        :class="[
         'tab-flap flex items-center gap-2 bg-true-white w-fit bordered border-b-0 text-primary font-bold tracking-tight',
         {
           'py-2 px-4': labelSize === 'md',

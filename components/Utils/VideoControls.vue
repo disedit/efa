@@ -44,33 +44,33 @@ function unmute() {
 
 <template>
    <div :class="['video-controls', { seeking, shadow: controlsHaveShadow }]">
-      <button @click="$emit('togglePlay')" title="Pause Video">
+      <button title="Pause Video" @click="$emit('togglePlay')">
         <IconPause class="icon" />
       </button>
-      <span class="time" v-if="showTime">
+      <span v-if="showTime" class="time">
         {{ human(time) }}
         <span class="total-time">/ {{ human(duration) }}</span>
       </span>
-      <button @click="unmute" :title="muted ? 'Unmute volume' : 'Mute volume'" class="mute">
+      <button :title="muted ? 'Unmute volume' : 'Mute volume'" class="mute" @click="unmute">
         <IconUnmute v-if="muted" class="icon" />
         <IconMute v-else class="icon" />
         <Transition name="slide">
-          <span class="mute-tooltip" v-if="showUnmuteTooltip && !dismissUnmuteTooltip && muted">
+          <span v-if="showUnmuteTooltip && !dismissUnmuteTooltip && muted" class="mute-tooltip">
             Unmute video
           </span>
         </Transition>
       </button>
-      <button @click="$emit('showControls')" title="Show more controls" class="controls">
+      <button title="Show more controls" class="controls" @click="$emit('showControls')">
         <IconSlider class="icon" />
       </button>
       <div
-        class="progress"
         v-if="duration > 0"
+        ref="progress"
+        class="progress"
         @mouseenter="seeking = true"
         @mousemove="setSeekPosition"
         @mouseleave="seeking = false"
-        @click="seek"
-        ref="progress">
+        @click="seek">
         <div class="progress-bar" :style="{ width: width(time) }" />
         <div class="progress-track">
           <div class="progress-track-thumb" :style="{ width: seekPosition + '%' }" />

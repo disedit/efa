@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ block: Object, context: Object })
+defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 
 const config = useRuntimeConfig()
 
@@ -44,7 +44,7 @@ const submit = async () => {
     } else {
       error.value = true
     }
-  } catch(e) {
+  } catch {
     error.value = true
   }
 }
@@ -100,16 +100,16 @@ async function setCurrentCountry() {
 
 <template>
   <section class="page-container text-primary grid lg:grid-cols-3 gap-site md:gap-12 !pt-0">
-    <form @submit.prevent="submit" class="lg:col-span-2">
-      <div v-html="block.text" class="prose hyphens-auto text-pretty text-md mb-8" />
+    <form class="lg:col-span-2" @submit.prevent="submit">
+      <div class="prose hyphens-auto text-pretty text-md mb-8" v-html="block.text" />
 
       <div v-if="error" class="bg-orange text-true-white p-2 font-bold text-base mb-4">
         An error happened while trying to process your donation. Try again later.
       </div>
       <FormAmount
+        v-model="form.amount"
         name="amount"
         :amounts="block.amounts"
-        v-model="form.amount"
         class="my-6 md:my-12"
       />
       <ElementsTab label-size="base" edge>
@@ -120,57 +120,57 @@ async function setCurrentCountry() {
         <div class="divide-y-(--border-width)">
           <div class="grid md:grid-cols-2">
             <FormFloatInput
+              v-model="form.first_name"
               name="firstName"
               label="First Name"
-              v-model="form.first_name"
               required
               autocomplete="given-name"
             />
             <FormFloatInput
+              v-model="form.last_name"
               name="lastName"
               label="Last Name"
-              v-model="form.last_name"
               required
               wrapper-class="md:border-l-[2.5px] border-t-[2.5px] md:border-t-0"
               autocomplete="family-name"
             />
           </div>
           <FormFloatInput
+            v-model="form.email"
             type="email"
             name="email"
             label="Email address"
-            v-model="form.email"
             required
             autocomplete="email"
           />
           <FormFloatInput
+            v-model="form.address"
             name="adddress"
             label="Address"
-            v-model="form.address"
             required
             autocomplete="street-address"
           />
           <div class="grid md:grid-cols-4">
             <FormFloatInput
+              v-model="form.postal_code"
               name="postalCode"
               label="Postal code"
-              v-model="form.postal_code"
               required
               autocomplete="postal-code"
             />
             <FormFloatInput
+              v-model="form.city"
               name="city"
               label="City"
-              v-model="form.city"
               required
               wrapper-class="md:col-span-3 md:border-l-[2.5px] border-t-[2.5px] md:border-t-0"
               autocomplete="address-level2"
             />
           </div>
           <FormFloatSelect
+            v-model="form.country"
             name="country"
             label="Country"
-            v-model="form.country"
             :options="countries"
             required
           />

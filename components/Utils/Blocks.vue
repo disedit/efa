@@ -15,9 +15,9 @@ const { componentName } = useUtils()
 
 <template>
   <Component
+    :is="componentName(block.acf_fc_layout)"
     v-for="(block, i) in blocks"
     :key="i"
-    :is="componentName(block.acf_fc_layout)"
     :block="block"
     :context="context"
   />

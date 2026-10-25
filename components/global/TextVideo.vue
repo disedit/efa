@@ -1,10 +1,10 @@
 <script setup>
-defineProps({ block: Object, context: Object })
+defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 </script>
 
 <template>
   <section class="page-container grid lg:grid-cols-3 gap-site text-blackish">
-    <div v-html="block.text" :class="['prose hyphens-auto text-pretty text-md lg:col-span-2 pe-inner', { 'text-purple': block.text_color === 'purple' }]" />
+    <div :class="['prose hyphens-auto text-pretty text-md lg:col-span-2 pe-inner', { 'text-purple': block.text_color === 'purple' }]" v-html="block.text" />
     <div v-if="block.video">
       <UtilsVideo
         id="PageVideo"

@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({ block: Object, context: Object })
+const props = defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 
 const { $gsap } = useNuxtApp()
 const { setDark, unsetDark } = useColorMode()
@@ -44,13 +44,13 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  mm && mm.kill()
+  mm?.kill()
   unsetDark()
 })
 </script>
 
 <template>
-  <section class="video" ref="video">
+  <section ref="video" class="video">
     <div class="video-wrapper">
       <UtilsVideo
         id="HomeVideo"
@@ -59,7 +59,7 @@ onUnmounted(() => {
         show-time
         show-unmute-tooltip
         class="video-player">
-        A Europe<br />For All
+        A Europe<br >For All
       </UtilsVideo>
     </div>
   </section>

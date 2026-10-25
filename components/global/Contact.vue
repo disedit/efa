@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ block: Object, context: Object })
+defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 const settings = await useSettings()
 
 const submitting = ref(false)
@@ -32,7 +32,7 @@ const submit = async () => {
     })
 
     submitted.value = true
-  } catch(e) {
+  } catch {
     error.value = true
   } finally {
     submitting.value = false
@@ -49,14 +49,14 @@ const submit = async () => {
           <span class="text-[2rem] font-medium -translate-y-[1px]">European Free Alliance</span>
         </div>
 
-        <div v-html="settings.footer.address" class="prose text-base leading-tight" />
+        <div class="prose text-base leading-tight" v-html="settings.footer.address" />
       </div>
 
       <UtilsSocials :socials="settings.socials" class="text-md" />
 
       <div class="mt-12">
         <div class="w-fit py-2 px-site bg-primary font-bold text-white text-base">Map</div>
-        <div v-html="block.map" class="map bordered" />
+        <div class="map bordered" v-html="block.map" />
       </div>
     </div>
     <div>
@@ -67,33 +67,33 @@ const submit = async () => {
         <form v-if="!submitted" @submit.prevent="submit">
           <div class="divide-y-(--border-width)">
             <FormFloatInput
+              v-model="form.name"
               name="name"
               label="Full name"
-              v-model="form.name"
               required
             />
             <FormFloatInput
+              v-model="form.email"
               type="email"
               name="email"
               label="Email address"
-              v-model="form.email"
               required
             />
             <FormFloatInput
+              v-model="form.organisation"
               name="organisation"
               label="Organisation"
-              v-model="form.organisation"
             />
             <input
+              v-model="form.company"
               type="hidden"
               name="company"
-              v-model="form.company"
-            />
+            >
             <FormFloatInput
+              v-model="form.message"
               type="textarea"
               name="message"
               label="Message"
-              v-model="form.message"
               required
             />
           </div>
@@ -113,9 +113,9 @@ const submit = async () => {
             </label>
             <div>
               <FormButton
+                id="mc-embedded-subscribe"
                 type="submit"
                 name="subscribe"
-                id="mc-embedded-subscribe"
                 value="Submit"
                 class="text-md"
                 :loading="submitting"

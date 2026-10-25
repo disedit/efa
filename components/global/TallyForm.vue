@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ block: Object, edge: Boolean })
+defineProps({ block: { type: Object, required: true }, edge: Boolean })
 
 useHead({
   script: [

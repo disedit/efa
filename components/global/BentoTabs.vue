@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ block: Object })
+defineProps({ block: { type: Object, required: true } })
 </script>
 
 <template>
@@ -24,7 +24,7 @@ defineProps({ block: Object })
             sizes="800px"
           />
         </div>
-        <div v-html="tab.content" class="prose" />
+        <div class="prose" v-html="tab.content" />
       </div>
     </ElementsTab>
   </section>

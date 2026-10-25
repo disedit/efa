@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ block: Object, context: Object })
+defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 
 const tabs = ref(null)
 const selectedTab = ref(null)
@@ -42,16 +42,16 @@ const selectTab = (index) => {
       <ElementsStackedTab
         v-for="(tab, i) in block.tabs"
         :key="i"
-        @selected="selectTab(i + 1)"
         :class="[`tab-${i + 1}`, { selected: selectedTab === i + 1 }]"
         :style="transitioning ? {
           'view-transition-name': `tab-${i + 1}`
         } : null"
+        @selected="selectTab(i + 1)"
       >
         <template #label>
           <h2>{{ tab.label }}</h2>
         </template>
-        <div v-html="tab.content" class="prose text-base max-w-[70ch] mx-auto" />
+        <div class="prose text-base max-w-[70ch] mx-auto" v-html="tab.content" />
       </ElementsStackedTab>
     </div>
   </section>

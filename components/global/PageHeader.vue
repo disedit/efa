@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({ block: Object, context: Object })
+defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 
 const currentPage = '#'
 const { page } = useUtils()

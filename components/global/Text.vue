@@ -1,7 +1,7 @@
 <script setup>
-defineProps({ block: Object, context: Object })
+defineProps({ block: { type: Object, required: true }, context: { type: Object, default: null } })
 </script>
 
 <template>
-  <div v-html="block.content" :class="['prose hyphens-auto text-pretty text-md', { 'text-purple': block.text_color === 'purple', 'text-blackish': block.text_color === 'black' }]" />
+  <div :class="['prose hyphens-auto text-pretty text-md', { 'text-purple': block.text_color === 'purple', 'text-blackish': block.text_color === 'black' }]" v-html="block.content" />
 </template>
